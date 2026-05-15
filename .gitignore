@@ -1,0 +1,4 @@
+# Office source files – only distribute final PDFs
+*.docx
+*.xlsx
+*.pptx
