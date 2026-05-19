@@ -2,3 +2,5 @@
 *.docx
 *.xlsx
 *.pptx
+# Participant submissions and operational data
+participants/*

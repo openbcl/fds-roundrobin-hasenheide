@@ -11,4 +11,8 @@ Only information documented in this repository or in an official release is bind
 
 ---
 
-*No questions have been received yet.*
+## Q1 – FDS version
+
+**Q: Can I use the latest nightly build (test version) of FDS 6.10.1?**
+
+No. Only the official release version of FDS 6.10.1 shall be used. This ensures comparability of results across all submissions.
