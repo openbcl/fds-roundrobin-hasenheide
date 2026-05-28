@@ -76,6 +76,8 @@ Initial fuel mass: 150 g
 Fuel area:         0.0256 m²
 ```
 
+The FDS template approximates the pan as 150 mm × 150 mm (0.0225 m²) with coordinates snapped to multiples of 0.05 m, compatible with mesh cell sizes that are multiples or fractions of 5 cm. When deriving MLRPUA or HRRPUA from the prescribed fuel mass history, participants shall use the actual fuel area of **0.0256 m²**, not the model geometry.
+
 Ignition was performed manually. Ignition defines:
 
 ```text
