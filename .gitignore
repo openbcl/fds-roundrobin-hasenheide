@@ -2,5 +2,8 @@
 *.docx
 *.xlsx
 *.pptx
+# Literature PDFs in docs/ – exclude CfP files
+docs/*.pdf
+!docs/Call_for_Participation_*.pdf
 # Participant submissions and operational data
 participants/*

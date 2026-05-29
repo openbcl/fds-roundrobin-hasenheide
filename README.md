@@ -235,6 +235,7 @@ Participants shall interpret their simulation results with respect to tenability
 ```text
 F1
 F2
+FC
 F3
 ```
 
@@ -297,9 +298,9 @@ hasenheide@bcl-leipzig.de
 Multiple submissions from the same organisation or working group are possible. Each planned submission receives a separate anonymous participant ID, for example:
 
 ```text
-P01
-P02
-P03
+K7M
+3QA
+BV5
 ```
 
 ### Step 2: Data package
@@ -335,7 +336,7 @@ VIB_Hasenheide_Stage1_<ParticipantID>.zip
 Example:
 
 ```text
-VIB_Hasenheide_Stage1_P03.zip
+VIB_Hasenheide_Stage1_K7M.zip
 ```
 
 The archive shall contain the FDS input file, any additional files referenced by the FDS input, the FDS output file and CSV result files.
@@ -392,10 +393,10 @@ FDS generates the device output file automatically from the `CHID` defined in th
 hep_160_150_<ParticipantID>_<RunID>_devc.csv
 ```
 
-Example for participant P03, best-estimate case:
+Example for participant K7M, best-estimate case:
 
 ```text
-hep_160_150_P03_best_estimate_devc.csv
+hep_160_150_K7M_best_estimate_devc.csv
 ```
 
 This file is required in every submission. For multiple cases, each subdirectory must contain its own `_devc.csv` file.
@@ -460,23 +461,20 @@ Height notation: the decimal point is replaced by an underscore, e.g. 0.6 m → 
 
 The questionnaire records, among other items:
 
-- participant ID,
-- organisation or working group, if desired for internal coordination,
-- consent regarding co-authorship in a scientific publication,
-- tools used for modelling and post-processing, e.g. PyroSim, Python or fdsreader,
-- use or modification of the provided FDS template,
-- mesh strategy and technical justification,
-- implementation of the provided fuel mass history,
-- fuel or reaction model,
-- selected soot yield,
-- selected CO yield,
-- selected radiative fraction,
-- selected mass-specific extinction coefficient,
-- leakage assumptions,
-- wall boundary conditions and material modelling,
-- modelling or interpretation of optical smoke alarms according to DIN EN 14604,
-- criteria for impaired egress and incapacitation in F1, F2 and F3,
-- main uncertainties from the participant’s perspective.
+- participant ID and run ID,
+- whether the simulation was performed individually or as a team,
+- justification and literature references for the C7 surrogate fuel, including soot yield, CO yield, radiative fraction and net heat of combustion,
+- sources for combustion parameters (experimental data, handbook value, FDS default, engineering judgement),
+- justification for mesh resolution and target D*/dx near the fire source,
+- justification for wall boundary conditions and material properties,
+- approach to air leakage modelling and its justification,
+- basis and reference for the smoke alarm activation threshold or detector model,
+- whether additional smoothing was applied to the prescribed mass curve prior to FDS input,
+- sensitivity studies performed but not submitted,
+- tenability assessment: criteria, thresholds, assessment heights and times to untenable conditions in F1, F2, FC and F3,
+- use of AI tools in the modelling process,
+- self-assessed confidence in quantitative outputs and tenability assessment,
+- main influential and uncertain modelling choices from the participant’s perspective.
 
 ---
 

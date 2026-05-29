@@ -237,6 +237,7 @@ Die Teilnehmenden sollen ihre Simulationsergebnisse hinsichtlich der Personensic
 ```text
 F1
 F2
+FC
 F3
 ```
 
@@ -299,9 +300,9 @@ hasenheide@bcl-leipzig.de
 Aus einer Organisation oder Arbeitsgruppe können mehrere Einreichungen erfolgen. Jede geplante Einreichung erhält eine eigene anonyme Teilnehmer-ID, z. B.:
 
 ```text
-P01
-P02
-P03
+K7M
+3QA
+BV5
 ```
 
 ### Schritt 2: Datenpaket
@@ -322,7 +323,7 @@ Die Teilnehmenden füllen den strukturierten Fragebogen aus:
 [NOCH ZU ERGÄNZEN: Link zum Fragebogen]
 ```
 
-Der Fragebogen erfasst Modellierungsentscheidungen, Annahmen, relevante Metadaten sowie die Bewertung der Personensicherheit in den betrachteten Räumen F1, F2 und F3.
+Der Fragebogen erfasst Modellierungsentscheidungen, Annahmen, relevante Metadaten sowie die Bewertung der Personensicherheit in den betrachteten Räumen F1, F2, FC und F3.
 
 ### Schritt 5: Abgabe
 
@@ -337,7 +338,7 @@ VIB_Hasenheide_Stage1_<ParticipantID>.zip
 Beispiel:
 
 ```text
-VIB_Hasenheide_Stage1_P03.zip
+VIB_Hasenheide_Stage1_K7M.zip
 ```
 
 Das Archiv enthält die FDS-Eingabedatei, etwaige zusätzliche Dateien, die von der FDS-Eingabedatei referenziert werden, die FDS-Outputdatei und CSV-Ergebnisdateien.
@@ -396,10 +397,10 @@ FDS generiert die Sensorausgabedatei automatisch aus der im Template definierten
 hep_160_150_<ParticipantID>_<RunID>_devc.csv
 ```
 
-Beispiel für Teilnehmende P03, Best-Estimate-Lauf:
+Beispiel für Teilnehmende K7M, Best-Estimate-Lauf:
 
 ```text
-hep_160_150_P03_best_estimate_devc.csv
+hep_160_150_K7M_best_estimate_devc.csv
 ```
 
 Diese Datei ist in jeder Abgabe verpflichtend. Bei mehreren Läufen muss jedes Unterverzeichnis eine eigene `_devc.csv`-Datei enthalten.
@@ -464,23 +465,20 @@ Höhennotation: Dezimalpunkt wird durch Unterstrich ersetzt, z. B. 0,6 m → `0_
 
 Der Fragebogen erfasst unter anderem:
 
-- Teilnehmer-ID,
-- Organisation bzw. Arbeitsgruppe, sofern für die interne Koordination gewünscht,
-- Einverständnis zur Co-Autorenschaft bei einer wissenschaftlichen Veröffentlichung,
-- verwendete Werkzeuge für Modellierung und Nachbearbeitung, z. B. PyroSim, Python oder fdsreader,
-- Nutzung oder Anpassung des bereitgestellten FDS-Templates,
-- Meshstrategie und fachliche Begründung,
-- Umsetzung des vorgegebenen Massenverlusts,
-- verwendetes Brennstoff- bzw. Reaktionsmodell,
-- gewählte Rußausbeute,
-- gewählte CO-Ausbeute,
-- gewählter Strahlungsanteil,
-- verwendeter massenspezifischer Extinktionskoeffizient,
-- Annahmen zu Leckagen,
-- Wand- und Materialmodellierung,
-- Modellierung bzw. Interpretation der optischen Rauchwarnmelder nach DIN EN 14604,
-- Kriterien für Fluchtbehinderung und Handlungsunfähigkeit in F1, F2 und F3,
-- wichtigste Unsicherheiten aus Sicht der Teilnehmenden.
+- Teilnehmer-ID und Run-ID,
+- ob die Simulation einzeln oder im Team durchgeführt wurde,
+- Begründung und Literaturquellen für das C7-Surrogat, einschließlich Rußausbeute, CO-Ausbeute, Strahlungsanteil und unterem Heizwert,
+- Quellen der Verbrennungsparameter (experimentelle Daten, Handbuchwert, FDS-Default, ingenieurmäßige Abschätzung),
+- Begründung der Gitterauflösung und angestrebtes D*/dx nahe der Brandquelle,
+- Begründung der Wandrandbedingungen und Materialeigenschaften,
+- Vorgehen bei der Leckagemodellierung und dessen Begründung,
+- Grundlage und Quelle für den Rauchwarnmelder-Schwellenwert bzw. das Detektormodell,
+- ob die vorgegebene Massenkurve vor dem FDS-Input zusätzlich geglättet wurde,
+- durchgeführte, aber nicht eingereichte Sensitivitätsstudien,
+- Bewertung der Personensicherheit: Kriterien, Grenzwerte, Bewertungshöhen und Zeiten bis zum Erreichen untragbarer Bedingungen in F1, F2, FC und F3,
+- Nutzung von KI-Werkzeugen im Modellierungsprozess,
+- selbsteingeschätzte Konfidenz in die quantitativen Ergebnisse und die Bewertung der Personensicherheit,
+- aus Sicht der Teilnehmenden einflussreichste und unsicherste Modellierungsentscheidung.
 
 ---
 
@@ -523,9 +521,9 @@ Sensitivitäten sollen nicht zur nachträglichen Auswahl der „besten“ Kurve 
 Die Abgaben werden zunächst intern durch das Auswertungsteam ausgewertet. In Berichten und Präsentationen werden Gruppen anonymisiert dargestellt, z. B.:
 
 ```text
-P01
-P02
-P03
+K7M
+3QA
+BV5
 ```
 
 Bei einer wissenschaftlichen Veröffentlichung können aktive Teilnehmende als Co-Autorinnen und Co-Autoren geführt werden, sofern sie zustimmen und die üblichen Voraussetzungen für eine Autorenschaft erfüllen. Autorenschaft und Reihenfolge werden vor Einreichung transparent abgestimmt.
