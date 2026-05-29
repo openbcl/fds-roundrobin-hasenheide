@@ -101,6 +101,8 @@
 &OBST ID='Pan_wall_S', XB=2.000,2.150,2.050,2.050,0.20,0.30/
 &OBST ID='Pan_wall_N', XB=2.000,2.150,2.200,2.200,0.20,0.30/
 
+! Thermocouples: bead diameter 1 mm (= FDS default). QUANTITY='THERMOCOUPLE' models the
+! radiation-affected bead response (not the gas temperature) to match the measured TCs.
 &DEVC ID='TC_Ceiling_F1', QUANTITY='THERMOCOUPLE', XYZ=2.0625,2.1375,2.54/
 
 &DEVC ID='TC_F1_0_6', QUANTITY='THERMOCOUPLE', XYZ=3.650,0.5,0.6/

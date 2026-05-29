@@ -129,6 +129,8 @@ Die Wahl des Surrogatbrennstoffs und der Verbrennungsparameter ist selbst Teil d
 
 Jede Abgabe muss eine eindeutig gekennzeichnete **Best-Estimate-Prognose** enthalten. Zusätzliche Sensitivitätsläufe sind willkommen, werden aber getrennt ausgewertet.
 
+Die Best-Estimate-Prognose soll so realistisch wie möglich sein. Dies ist eine Prognoseübung, keine ingenieurmäßige Bemessung: Es sollen keine Sicherheitsfaktoren, bewusst konservativen Annahmen oder Worst-Case-Festlegungen verwendet werden. Ziel ist es, das tatsächliche Brandverhalten so genau wie möglich vorherzusagen.
+
 ---
 
 ## 5. FDS-Template

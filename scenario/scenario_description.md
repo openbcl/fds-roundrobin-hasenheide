@@ -137,6 +137,8 @@ Thermocouples were installed in F1, F2 and F3 at the following heights above flo
 
 An additional thermocouple was installed at ceiling level above the fire in F1.
 
+The thermocouples had a bead diameter of approximately 1 mm. The FDS template therefore uses `QUANTITY='THERMOCOUPLE'`, which models the radiation-affected bead response rather than the gas temperature; the FDS default bead diameter of 1 mm is consistent with the measurement.
+
 ### 8.2 Optical measurements
 
 Light-extinction measurements were installed at defined locations in the apartment. The relevant optical measurement locations for this scenario are provided in the FDS template and associated measurement-location files.

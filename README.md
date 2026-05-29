@@ -129,6 +129,8 @@ The choice of surrogate fuel and combustion parameters is itself treated as part
 
 Each submission must contain one clearly identified **best-estimate prediction**. Additional sensitivity cases are welcome but will be evaluated separately.
 
+The best-estimate prediction should be as realistic as possible. This is a prediction exercise, not an engineering design: participants should not apply safety factors, deliberately conservative assumptions or worst-case choices. The aim is to forecast the actual fire behaviour as accurately as possible.
+
 ---
 
 ## 5. FDS template
