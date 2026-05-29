@@ -475,7 +475,7 @@ The questionnaire records, among other items:
 
 - participant ID and run ID,
 - whether the simulation was performed individually or as a team,
-- justification and literature references for the C7 surrogate fuel, including soot yield, CO yield, radiative fraction, net heat of combustion and mass-specific extinction coefficient,
+- justification and literature references for the C7 surrogate fuel, including soot yield, CO yield, radiative fraction, heat of combustion and mass-specific extinction coefficient,
 - sources for combustion parameters (experimental data, handbook value, FDS default, engineering judgement),
 - justification for mesh resolution and target D*/dx near the fire source,
 - justification for wall boundary conditions and material properties,

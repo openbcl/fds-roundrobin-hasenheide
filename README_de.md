@@ -479,7 +479,7 @@ Der Fragebogen erfasst unter anderem:
 
 - Teilnehmer-ID und Run-ID,
 - ob die Simulation einzeln oder im Team durchgeführt wurde,
-- Begründung und Literaturquellen für das C7-Surrogat, einschließlich Rußausbeute, CO-Ausbeute, Strahlungsanteil, unterem Heizwert und massenspezifischem Extinktionskoeffizienten,
+- Begründung und Literaturquellen für das C7-Surrogat, einschließlich Rußausbeute, CO-Ausbeute, Strahlungsanteil, Verbrennungswärme und massenspezifischem Extinktionskoeffizienten,
 - Quellen der Verbrennungsparameter (experimentelle Daten, Handbuchwert, FDS-Default, ingenieurmäßige Abschätzung),
 - Begründung der Gitterauflösung und angestrebtes D*/dx nahe der Brandquelle,
 - Begründung der Wandrandbedingungen und Materialeigenschaften,

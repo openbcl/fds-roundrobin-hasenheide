@@ -7,3 +7,5 @@ docs/*.pdf
 !docs/Call_for_Participation_*.pdf
 # Participant submissions and operational data
 participants/*
+# Internal working notes (local only)
+backlog.md
