@@ -57,10 +57,11 @@ Air leakage is expected but not quantified.
 
 The fuel used in this scenario was a commercial C7-UVCB hydrocarbon mixture labelled “Heptan”.
 
-Approximate composition of the delivered batch:
+Gas chromatography of the delivered batch indicates the following approximate composition by compound class (wt.%, derived from the measured molar fractions):
 
-- n-heptane: approximately 35.8 wt.%
-- methylcyclohexane: approximately 22.9 wt.%
+- n-alkanes: approximately 35 wt.% (predominantly n-heptane)
+- iso-alkanes: approximately 15 wt.%
+- cyclic alkanes (naphthenes): approximately 45 wt.% (predominantly methylcyclohexane and cyclohexane)
 - aromatic content: very low
 
 The fuel should therefore not be interpreted as chemically pure n-heptane. For FDS modelling, participants shall define an appropriate C7 surrogate fuel or reaction model and document their choice in the questionnaire.

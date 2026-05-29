@@ -90,7 +90,7 @@ The following information is provided uniformly to all participants and shall be
 | Building layout | Rooms F1, F2, F3 and FC according to drawings and template |
 | Fire location | Centre of the pan in room F1 |
 | Pan dimensions | 160 mm × 160 mm × 100 mm |
-| Fuel information | Main components: n-heptane, methylcyclohexane and other heptane isomers |
+| Fuel information | C7-UVCB mixture of n-alkanes, iso-alkanes and cyclic alkanes (predominantly n-heptane and methylcyclohexane) |
 | Initial fuel mass | 150 g |
 | Window condition | Closed during the pre-ventilation period |
 | Door condition | Internal doors removed; stairwell door closed during the pre-ventilation period |
@@ -463,7 +463,7 @@ The questionnaire records, among other items:
 
 - participant ID and run ID,
 - whether the simulation was performed individually or as a team,
-- justification and literature references for the C7 surrogate fuel, including soot yield, CO yield, radiative fraction and net heat of combustion,
+- justification and literature references for the C7 surrogate fuel, including soot yield, CO yield, radiative fraction, net heat of combustion and mass-specific extinction coefficient,
 - sources for combustion parameters (experimental data, handbook value, FDS default, engineering judgement),
 - justification for mesh resolution and target D*/dx near the fire source,
 - justification for wall boundary conditions and material properties,

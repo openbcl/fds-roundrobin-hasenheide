@@ -90,7 +90,7 @@ Die folgenden Informationen werden allen Teilnehmenden einheitlich bereitgestell
 | Gebäudestruktur | Räume F1, F2, F3 und FC gemäß Zeichnungen und Template |
 | Brandort | Mittelpunkt der Brandwanne in Raum F1 |
 | Wannenabmessungen | 160 mm × 160 mm × 100 mm |
-| Brennstoffinformation | Hauptbestandteile: n-Heptan, Methylcyclohexan und weitere Isomere des Heptans |
+| Brennstoffinformation | C7-UVCB-Gemisch aus n-Alkanen, iso-Alkanen und cyclischen Alkanen (überwiegend n-Heptan und Methylcyclohexan) |
 | Initiale Brennstoffmasse | 150 g |
 | Fensterzustand | geschlossen während der Phase ohne Belüftung |
 | Türzustand | Innentüren entfernt; Tür zum Treppenraum geschlossen während der Phase ohne Belüftung |
@@ -467,7 +467,7 @@ Der Fragebogen erfasst unter anderem:
 
 - Teilnehmer-ID und Run-ID,
 - ob die Simulation einzeln oder im Team durchgeführt wurde,
-- Begründung und Literaturquellen für das C7-Surrogat, einschließlich Rußausbeute, CO-Ausbeute, Strahlungsanteil und unterem Heizwert,
+- Begründung und Literaturquellen für das C7-Surrogat, einschließlich Rußausbeute, CO-Ausbeute, Strahlungsanteil, unterem Heizwert und massenspezifischem Extinktionskoeffizienten,
 - Quellen der Verbrennungsparameter (experimentelle Daten, Handbuchwert, FDS-Default, ingenieurmäßige Abschätzung),
 - Begründung der Gitterauflösung und angestrebtes D*/dx nahe der Brandquelle,
 - Begründung der Wandrandbedingungen und Materialeigenschaften,
