@@ -4,7 +4,7 @@
 
 **Szenario:** `hep_160_150`  
 **Berechnungsart:** Semi-Blind Prediction / semi-blinde Prognoserechnung  
-**Software:** Fire Dynamics Simulator (FDS) 6.10.1  
+**Software:** Fire Dynamics Simulator (FDS) 6.11.0  
 **Status:** Vorbereitung / Call for Participation  
 **Träger:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)
 
@@ -25,6 +25,10 @@ Stufe 1 ist als **Semi-Blind Prediction** angelegt:
 - **offen in den Modellierungsentscheidungen**, weil Teilnehmende zentrale Annahmen wie Gitterauflösung, Brandquellenumsetzung, Rußausbeute, Strahlungsanteil, Leckageannahmen und Wandmodellierung selbst festlegen und begründen.
 
 Eine spätere **Open Calculation** ist geplant. In dieser Stufe werden die experimentellen Daten offengelegt. Danach können Modelle überarbeitet, Sensitivitäten durchgeführt und Abweichungen gezielt analysiert werden.
+
+Durch die Vorgabe der Massenverlustkurve nimmt die Studie die Brandwachstumsprognose bewusst aus dem Untersuchungsumfang heraus und konzentriert sich auf Rauchtransport, thermische Schichtung, Lichtextinktion, Rauchwarnmelderaktivierung und Personensicherheit. Dies ist eine bewusste Entscheidung, um diese Größen von der bekannt großen Unsicherheit der Brandwachstumsmodellierung zu trennen.
+
+Die Ergebnisse charakterisieren die Prognosestreuung für dieses spezifische Szenario und diese Teilnehmerstichprobe. Sie sind nicht als allgemeines Maß für die Zuverlässigkeit von FDS zu verstehen; breitere Schlüsse erfordern die für spätere Stufen geplanten weiteren Szenarien und Teilnehmenden.
 
 ---
 
@@ -54,7 +58,7 @@ Die Kennung bezeichnet ein Versuchssetup mit drei Wiederholungen, nicht ein einz
 | Hauptzielgrößen | Temperatur, Lichtextinktion, Rauchwarnmelderaktivierung, Personensicherheit |
 | Optische Referenzwellenlänge | 638 nm |
 | Rauchwarnmelder | optische Rauchwarnmelder nach DIN EN 14604 |
-| FDS-Version | FDS 6.10.1 |
+| FDS-Version | FDS 6.11.0 |
 
 Das relevante Wohnungsmodell besteht aus drei verbundenen Räumen und einem Flur:
 
@@ -83,7 +87,7 @@ Die folgenden Informationen werden allen Teilnehmenden einheitlich bereitgestell
 | Versuchsbeschreibung | Ablauf, Zündung, Phase ohne Belüftung und spätere Belüftung |
 | Randbedingungen | dokumentierte Anfangs- und Umgebungsbedingungen |
 | Zeichnungen | Grundriss, Raumhöhen, Schnitte, Raumbezeichnungen und relevante Maße [Grundriss (PDF)](geometry/Floor_plan_overview.pdf) |
-| FDS-Version | FDS 6.10.1 |
+| FDS-Version | FDS 6.11.0 |
 | FDS-Template | Eingabedatei mit Referenzgeometrie und Sensorpositionen |
 | Sensoren | `DEVC`-Einträge für Thermoelemente, optische Messpunkte und Rauchwarnmelderpositionen |
 | Massenverlust | gemittelte und geglättete Brennstoffmassenkurve aus drei Wiederholungen |
@@ -106,6 +110,8 @@ Die folgenden Informationen werden allen Teilnehmenden einheitlich bereitgestell
 
 Die folgenden Modellierungsentscheidungen bleiben bewusst frei. Sie müssen im Fragebogen dokumentiert und begründet werden.
 
+Die Wahl des Surrogatbrennstoffs und der Verbrennungsparameter ist selbst Teil der untersuchten Modellierungsstreuung; die Quellen dieser Werte werden im Fragebogen erfasst, damit ihr Beitrag zur Gesamtstreuung separat analysiert werden kann.
+
 | Bereich | Freie Entscheidung |
 |---|---|
 | Mesh | Zellgrößen, Mesh-Anordnung, Parallelisierung |
@@ -117,7 +123,7 @@ Die folgenden Modellierungsentscheidungen bleiben bewusst frei. Sie müssen im F
 | Wandmodell | inert, thermisch aktiv oder vereinfachte Schichten |
 | Leckagen | keine, geschätzt oder parametrisiert |
 | Anfangsbedingungen | sofern nicht ausdrücklich im Datenpaket vorgegeben |
-| Numerische Einstellungen | soweit mit FDS 6.10.1 plausibel und dokumentiert |
+| Numerische Einstellungen | soweit mit FDS 6.11.0 plausibel und dokumentiert |
 | Personensicherheit | Kriterien für Fluchtbehinderung und Handlungsunfähigkeit |
 | Sensitivitäten | optional, zusätzlich zur Hauptprognose |
 
@@ -150,6 +156,8 @@ Die folgenden Informationen werden vor dem Abgabe-Freeze nicht bereitgestellt:
 - Ergebnisse anderer Teilnehmender.
 
 Die bereitgestellte Massenverlustkurve ist eine gemittelte und geglättete Kurve aus drei Wiederholungen. Ihre Umsetzung in FDS, z. B. als HRR-Randbedingung oder als Massenverlustrate, muss von den Teilnehmenden dokumentiert werden.
+
+Das Szenario basiert auf drei Wiederholungsversuchen. Mit der Offenlegung der experimentellen Daten wird die Auswertung die experimentelle Wiederholbarkeit (Streuung zwischen den Wiederholungen) quantifizieren und als Referenzband berichten, damit die Streuung der Simulationsergebnisse relativ zur experimentellen Unsicherheit und nicht gegen eine einzelne Kurve interpretiert werden kann.
 
 ---
 
@@ -230,6 +238,8 @@ Die Teilnehmenden sollen angeben, wie sie die Rauchwarnmelderaktivierung in ihre
 
 In Stufe 1 wird keine gemeinsame „richtige“ Aktivierungsschwelle vorgegeben. Die Teilnehmenden müssen Methode und Schwellenwert für ihre Prognose selbst festlegen, begründen und dokumentieren.
 
+Die Wahl der Aktivierungsmethode und des Schwellenwerts ist Teil der untersuchten Prognose. Die vorhergesagten Aktivierungszeiten werden mit den experimentell gemessenen Aktivierungszeiten verglichen; die Streuung der gewählten Methoden wird analysiert, nicht entfernt.
+
 ### 7.4 Interpretation der Personensicherheit
 
 Die Teilnehmenden sollen ihre Simulationsergebnisse hinsichtlich der Personensicherheit in folgenden Räumen interpretieren:
@@ -247,6 +257,8 @@ Für jeden Raum soll abgeschätzt werden, ab wann:
 - Handlungsunfähigkeit zu erwarten ist.
 
 Die Bewertungsmethode ist zu dokumentieren. Mögliche Kriterien sind Lichtextinktion bzw. Sichtweite, Temperatur, Rauchschichtlage, CO-Konzentration oder eine kombinierte ingenieurmäßige Beurteilung. Verwendete Kriterien und Grenzwerte müssen im Fragebogen angegeben werden.
+
+Die Wahl der Tauglichkeitskriterien und Grenzwerte ist selbst Gegenstand dieser Studie. Die Teilnehmenden legen ihre Kriterien daher selbst fest und begründen sie; die daraus resultierende Streuung der Kriterien und der vorhergesagten Tauglichkeitszeiten ist Teil der beabsichtigten Auswertung und wird mit den experimentellen Daten verglichen.
 
 Für den Vergleich mit den Experimentaldaten stehen die im FDS-Template vorgegebenen Größen und Positionen im Mittelpunkt. Für die eigene Bewertung der Personensicherheit dürfen die Teilnehmenden jedoch zusätzliche Größen, Sensorpositionen oder abgeleitete Kenngrößen verwenden, sofern diese im Fragebogen dokumentiert werden.
 
@@ -311,7 +323,7 @@ Die Teilnehmenden verwenden die aktuelle freigegebene Version dieses Repositorie
 
 ### Schritt 3: Simulation
 
-Jede Gruppe führt mindestens eine Best-Estimate-Simulation des Szenarios `hep_160_150` mit FDS 6.10.1 durch.
+Jede Gruppe führt mindestens eine Best-Estimate-Simulation des Szenarios `hep_160_150` mit FDS 6.11.0 durch.
 
 Optionale Sensitivitätsläufe können zusätzlich zur Best-Estimate-Prognose eingereicht werden.
 
@@ -565,6 +577,8 @@ Verbindlich für die Teilnahme ist der jeweils freigegebene GitHub-Release:
 https://github.com/openbcl/fds-roundrobin-hasenheide
 ```
 
+Bei Abweichungen zwischen dem veröffentlichten Call for Participation und diesem Repository ist der aktuelle offizielle Repository-Release maßgeblich.
+
 ---
 
 ## 17. Kontakt
@@ -585,7 +599,7 @@ hasenheide@bcl-leipzig.de
 Vor der Abgabe bitte prüfen:
 
 - [ ] Best-Estimate-Lauf ist eindeutig gekennzeichnet.
-- [ ] FDS 6.10.1 wurde verwendet.
+- [ ] FDS 6.11.0 wurde verwendet.
 - [ ] FDS-Eingabedatei `*.fds` ist enthalten.
 - [ ] FDS-Outputdatei `*.out` ist enthalten.
 - [ ] CSV-Ergebnisdateien `*.csv` sind enthalten.

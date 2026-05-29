@@ -77,7 +77,7 @@ Initial fuel mass: 150 g
 Fuel area:         0.0256 m²
 ```
 
-The FDS template approximates the pan as 150 mm × 150 mm (0.0225 m²) with coordinates snapped to multiples of 0.05 m, compatible with mesh cell sizes that are multiples or fractions of 5 cm. When deriving MLRPUA or HRRPUA from the prescribed fuel mass history, participants shall use the actual fuel area of **0.0256 m²**, not the model geometry.
+The fire pan is represented in the template as 150 mm × 150 mm so that all coordinates align with a 0.05 m grid; the physical pan is 160 mm × 160 mm (0.0256 m²). This approximation is deliberate and identical for every participant. For any area-specific quantity (MLRPUA, HRRPUA), the physical fuel area of **0.0256 m²** shall be used. Participants who instead use the geometric template area shall state this in the questionnaire.
 
 Ignition was performed manually. Ignition defines:
 
@@ -98,6 +98,8 @@ Hep_160_S1_R3
 ```
 
 Participants receive a single averaged and smoothed fuel mass curve derived from these replicates.
+
+The provided curve is the mean of the normalised mass-loss histories of the three replicates. The per-replicate raw data and the processing scripts will be released together with the experimental data after the submission freeze, ensuring full reproducibility of the prescribed input.
 
 The fuel mass history is prescribed as input data. Its implementation in FDS, for example as a prescribed heat release rate or as a mass loss rate, is part of the modelling choice and must be documented.
 

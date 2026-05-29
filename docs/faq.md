@@ -13,6 +13,22 @@ Only information documented in this repository or in an official release is bind
 
 ## Q1 – FDS version
 
-**Q: Can I use the latest nightly build (test version) of FDS 6.10.1?**
+**Q: Can I use the latest nightly build (test version) of FDS 6.11.0?**
 
-No. Only the official release version of FDS 6.10.1 shall be used. This ensures comparability of results across all submissions.
+No. Only the official release version of FDS 6.11.0 shall be used. This ensures comparability of results across all submissions.
+
+---
+
+## Q2 – Sharing of submitted results
+
+**Q: Will the submitted results be shared with the participants?**
+
+During the evaluation, all submissions are compiled and compared in anonymised form. Each participant receives the anonymised comparison of all submissions — for example in the evaluation report — so that everyone can see how the predictions scatter relative to each other and to the experimental data. Identifiable single-participant results are not shared with other participants.
+
+---
+
+## Q3 – Other models (zone models, other CFD codes)
+
+**Q: Can other models, such as zone models or other CFD codes, be used?**
+
+No. Stage 1 is specifically an FDS intercomparison: the provided template, the prescribed `DEVC` outputs and the automated post-processing are tied to FDS, and comparability requires that all participants use FDS 6.11.0. Zone models or other CFD codes are therefore not part of this exercise. Whether a broader cross-code comparison is undertaken at a later stage remains open, but it is outside the scope of Stage 1.

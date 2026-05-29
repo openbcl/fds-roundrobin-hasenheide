@@ -29,7 +29,7 @@
 ! Windows remain closed during the pre-ventilation phase.
 ! Air leakage is present but not explicitly defined.
 !
-! FDS version: 6.10.1
+! FDS version: 6.11.0
 ! Simulation end time corresponds to the pre-ventilation period.
 !
 ! This template is not intended to be run without participant-defined MESH,

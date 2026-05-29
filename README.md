@@ -4,7 +4,7 @@
 
 **Scenario:** `hep_160_150`  
 **Exercise type:** Semi-blind prediction  
-**Simulation code:** Fire Dynamics Simulator (FDS) 6.10.1  
+**Simulation code:** Fire Dynamics Simulator (FDS) 6.11.0  
 **Status:** Preparation / Call for Participation  
 **Organiser:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)
 
@@ -25,6 +25,10 @@ Stage 1 is conducted as a **semi-blind prediction exercise**:
 - **open with respect to modelling assumptions**, because participants define and justify key modelling choices such as mesh resolution, fire source specification, soot yield, radiative fraction, leakage assumptions and wall boundary conditions.
 
 A later **open calculation** stage is planned. In that stage, experimental data will be disclosed and participants may revise their models, perform sensitivity analyses and investigate the causes of deviations.
+
+By prescribing the fuel mass history, the exercise deliberately removes fire-growth prediction from its scope and focuses on smoke transport, thermal stratification, optical extinction, smoke alarm actuation and tenability. This is a conscious design choice to isolate these quantities from the well-known large uncertainty of fire-growth modelling.
+
+The findings characterise the prediction variability for this specific scenario and participant sample. They are not intended as a general measure of FDS reliability; broader conclusions require the additional scenarios and participants planned for later stages.
 
 ---
 
@@ -54,7 +58,7 @@ The identifier refers to a test setup with three replicate tests, not to one ind
 | Main quantities of interest | Gas temperature, optical extinction, smoke alarm actuation, tenability |
 | Optical reference wavelength | 638 nm |
 | Smoke alarms | Optical smoke alarms according to DIN EN 14604 |
-| FDS version | FDS 6.10.1 |
+| FDS version | FDS 6.11.0 |
 
 The relevant apartment layout consists of three interconnected rooms and a corridor:
 
@@ -83,7 +87,7 @@ The following information is provided uniformly to all participants and shall be
 | Test description | Test sequence, ignition, pre-ventilation period and subsequent ventilation |
 | Boundary conditions | Documented initial and ambient conditions |
 | Drawings | Floor plan, room heights, sections, room names and relevant dimensions [Floor plan (PDF)](geometry/Floor_plan_overview.pdf) |
-| FDS version | FDS 6.10.1 |
+| FDS version | FDS 6.11.0 |
 | FDS template | Input file with reference geometry and measurement locations |
 | Instrumentation | `DEVC` entries for thermocouples, optical measurement points and smoke alarm locations |
 | Fuel mass history | Averaged and smoothed fuel mass curve derived from the three replicate tests |
@@ -106,6 +110,8 @@ The following information is provided uniformly to all participants and shall be
 
 The following modelling choices are intentionally left to the participants. They must be documented and justified in the questionnaire.
 
+The choice of surrogate fuel and combustion parameters is itself treated as part of the modelling variability under investigation; the sources of these values are recorded in the questionnaire so that their contribution to the overall scatter can be analysed separately.
+
 | Category | Modelling choice |
 |---|---|
 | Computational mesh | Cell sizes, mesh layout, domain decomposition and parallelisation |
@@ -117,7 +123,7 @@ The following modelling choices are intentionally left to the participants. They
 | Wall boundary conditions | Inert, thermally active or simplified layered constructions |
 | Leakage / infiltration | None, estimated or parameterised |
 | Initial conditions | Where not explicitly specified in the data package |
-| Numerical settings | As long as they are plausible for FDS 6.10.1 and documented |
+| Numerical settings | As long as they are plausible for FDS 6.11.0 and documented |
 | Tenability assessment | Criteria for impaired egress and incapacitation |
 | Sensitivity analyses | Optional, in addition to the main prediction |
 
@@ -150,6 +156,8 @@ The following information is not provided before the submission freeze:
 - results from other participants.
 
 The provided fuel mass history is an averaged and smoothed curve derived from three replicate tests. Its implementation in FDS, for example as a prescribed heat release rate or as a mass loss rate, must be documented by the participants.
+
+The scenario is based on three replicate tests. When the experimental data are released, the evaluation will quantify the experimental repeatability (replicate scatter) and report it as a reference band, so that the spread of the simulation results can be interpreted relative to the experimental uncertainty rather than against a single curve.
 
 ---
 
@@ -228,6 +236,8 @@ Participants shall state how smoke alarm actuation is represented in their simul
 
 No common “correct” actuation threshold is prescribed in Stage 1. Participants must define, justify and document the method and threshold used for their own prediction.
 
+The participant's choice of activation method and threshold is part of the prediction under study. Predicted activation times are compared against the experimentally measured activation times; the variability of the chosen methods is analysed rather than removed.
+
 ### 7.4 Tenability assessment
 
 Participants shall interpret their simulation results with respect to tenability in the following compartments:
@@ -245,6 +255,8 @@ For each room, participants shall estimate when:
 - incapacitation is expected.
 
 The assessment methodology shall be documented. Possible criteria include optical extinction or visibility, gas temperature, smoke layer height, CO concentration or a combined engineering judgement. The applied criteria and threshold values shall be specified in the questionnaire.
+
+The choice of tenability criteria and threshold values is itself an object of this study. Participants therefore define and justify their own criteria; the resulting variability in the criteria and in the predicted tenability times is part of the intended analysis and is compared against the experimental data.
 
 For the common comparison, the quantities and locations defined in the FDS template form the primary basis. However, participants may use additional quantities, sensor locations or derived indicators for their own tenability assessment, provided that these are documented in the questionnaire.
 
@@ -309,7 +321,7 @@ Participants use the current released version of this repository. Only official 
 
 ### Step 3: Simulation
 
-Each group performs at least one best-estimate simulation of `hep_160_150` using FDS 6.10.1.
+Each group performs at least one best-estimate simulation of `hep_160_150` using FDS 6.11.0.
 
 Optional sensitivity cases may be submitted in addition to the best-estimate prediction.
 
@@ -561,6 +573,8 @@ Participation shall be based on the official GitHub release:
 https://github.com/openbcl/fds-roundrobin-hasenheide
 ```
 
+In case of any discrepancy between the published Call for Participation and this repository, the current official repository release is binding.
+
 ---
 
 ## 17. Contact
@@ -581,7 +595,7 @@ hasenheide@bcl-leipzig.de
 Before submission, please check:
 
 - [ ] Best-estimate case is clearly identified.
-- [ ] FDS 6.10.1 was used.
+- [ ] FDS 6.11.0 was used.
 - [ ] FDS input file `*.fds` is included.
 - [ ] FDS output file `*.out` is included.
 - [ ] CSV result files `*.csv` are included.
