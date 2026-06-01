@@ -6,7 +6,8 @@
 **Berechnungsart:** Semi-Blind Prediction / semi-blinde Prognoserechnung  
 **Software:** Fire Dynamics Simulator (FDS) 6.11.0  
 **Status:** Vorbereitung / Call for Participation  
-**Träger:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)
+**Träger:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)  
+**Lizenz:** CC BY 4.0 (siehe [LICENSE](LICENSE))
 
 ---
 
@@ -32,35 +33,24 @@ Die Ergebnisse charakterisieren die Prognosestreuung für dieses spezifische Sze
 
 ---
 
-## 2. Szenario
+## 2. Szenario und bereitgestellte Daten
 
-Stufe 1 verwendet das Versuchssetup:
+Stufe 1 verwendet das Versuchssetup `hep_160_150` — eine Serie von drei Wiederholungs-Poolbrandversuchen in einem leerstehenden Wohngebäude. Der Brand befand sich im Raum F1 der Testwohnung „Fluppe“. Die vollständige Beschreibung steht in [`scenario/scenario_description.md`](scenario/scenario_description.md).
 
-```text
-hep_160_150
-```
+**Auf einen Blick**
 
-Die Kennung bezeichnet ein Versuchssetup mit drei Wiederholungen, nicht ein einzelnes Experiment. Es handelt sich um Poolbrandversuche in einem leerstehenden Wohngebäude. Der Brand befand sich im Raum F1 der Testwohnung „Fluppe“.
-
-| Größe | Beschreibung |
+| Größe | Wert |
 |---|---|
 | Szenario-ID | `hep_160_150` |
 | Brandraum | F1 |
-| Brennstoff | kommerzielles „Heptan“, C7-UVCB-Kohlenwasserstoffgemisch |
-| Mögliches FDS-Surrogat | freie Wahl eines C7-Surrogats oder eigener Reaktionsdefinition |
-| Wannengeometrie | quadratische Brandwanne |
-| Wannengröße | 160 mm × 160 mm |
-| Wannentiefe | 100 mm |
-| Initiale Brennstoffmasse | 150 g |
-| Massenverlust | gemittelte und geglättete Brennstoffmassenkurve aus drei Wiederholungen |
+| Brennstoff | kommerzielles „Heptan“, C7-UVCB-Gemisch (n-/iso-/cyclische Alkane) |
+| Brandwanne | 160 mm × 160 mm × 100 mm, 150 g initiale Brennstoffmasse |
 | Wiederholungen | 3 |
 | Auswertungsphase | Phase ohne Belüftung |
-| Hauptzielgrößen | Temperatur, Lichtextinktion, Rauchwarnmelderaktivierung, Personensicherheit |
-| Optische Referenzwellenlänge | 638 nm |
-| Rauchwarnmelder | optische Rauchwarnmelder nach DIN EN 14604 |
+| Zielgrößen | Temperatur, Lichtextinktion (638 nm), Rauchwarnmelderaktivierung (DIN EN 14604), Personensicherheit |
 | FDS-Version | FDS 6.11.0 |
 
-Das relevante Wohnungsmodell besteht aus drei verbundenen Räumen und einem Flur:
+Das Wohnungsmodell besteht aus drei verbundenen Räumen und einem Flur:
 
 - **F1:** Brandraum,
 - **F2:** angrenzender Raum,
@@ -75,38 +65,18 @@ Die Innentüren zwischen diesen Bereichen waren entfernt. Die Fenster blieben w�
 
 ![Blick vom Flur FC in Richtung F1/F2](geometry/photos/View_FC-F2.jpg)
 
----
+**Einheitlich für alle Teilnehmenden bereitgestellt:**
 
-## 3. Bereitgestellte Eingangsdaten
+- Szenariobeschreibung — [`scenario/scenario_description.md`](scenario/scenario_description.md) (Ablauf, Brennstoffzusammensetzung, Umgebungsbedingungen, Instrumentierung, Messhöhen und -positionen).
+- Geometrie — Grundriss, Schnitte und DXF-Zeichnungen in [`geometry/`](geometry/) ([Grundriss als PDF](geometry/Floor_plan_overview.pdf)).
+- FDS-Template mit Referenzgeometrie und allen Messpositionen als `DEVC` — [`fds/`](fds/).
+- Gemittelte und geglättete Massenverlustkurve — [`scenario/mass_loss_hep_160_150.csv`](scenario/mass_loss_hep_160_150.csv).
 
-Die folgenden Informationen werden allen Teilnehmenden einheitlich bereitgestellt und sollen für die Abgabe in Stufe 1 verwendet werden.
-
-| Bereich | Vorgabe |
-|---|---|
-| Szenario | `hep_160_150` |
-| Versuchsbeschreibung | Ablauf, Zündung, Phase ohne Belüftung und spätere Belüftung |
-| Randbedingungen | dokumentierte Anfangs- und Umgebungsbedingungen |
-| Zeichnungen | Grundriss, Raumhöhen, Schnitte, Raumbezeichnungen und relevante Maße [Grundriss (PDF)](geometry/Floor_plan_overview.pdf) |
-| FDS-Version | FDS 6.11.0 |
-| FDS-Template | Eingabedatei mit Referenzgeometrie und Sensorpositionen |
-| Sensoren | `DEVC`-Einträge für Thermoelemente, optische Messpunkte und Rauchwarnmelderpositionen |
-| Massenverlust | gemittelte und geglättete Brennstoffmassenkurve aus drei Wiederholungen |
-| Gebäudestruktur | Räume F1, F2, F3 und FC gemäß Zeichnungen und Template |
-| Brandort | Mittelpunkt der Brandwanne in Raum F1 |
-| Wannenabmessungen | 160 mm × 160 mm × 100 mm |
-| Brennstoffinformation | C7-UVCB-Gemisch aus n-Alkanen, iso-Alkanen und cyclischen Alkanen (überwiegend n-Heptan und Methylcyclohexan) |
-| Initiale Brennstoffmasse | 150 g |
-| Fensterzustand | geschlossen während der Phase ohne Belüftung |
-| Türzustand | Innentüren entfernt; Tür zum Treppenraum geschlossen während der Phase ohne Belüftung |
-| Messpositionen | Koordinaten der Thermoelemente, optischen Messpunkte und Rauchwarnmelder |
-| Auswertezeitraum | Phase ohne Belüftung |
-| Abgabeformat | FDS-Eingabedatei, FDS-Outputdatei, CSV-Ergebnisdateien und Fragebogen |
-| Fragebogen-Link | `[NOCH ZU ERGÄNZEN: Link zum Fragebogen]` |
-| Anonymisierung | Teilnehmende werden in Zwischenauswertungen anonymisiert |
+Diese Informationen bilden eine gemeinsame Basis; detaillierte Werte stehen in der Szenariobeschreibung und im FDS-Template.
 
 ---
 
-## 4. Freie Modellierungsentscheidungen
+## 3. Freie Modellierungsentscheidungen
 
 Die folgenden Modellierungsentscheidungen bleiben bewusst frei. Sie müssen im Fragebogen dokumentiert und begründet werden.
 
@@ -133,7 +103,7 @@ Die Best-Estimate-Prognose soll so realistisch wie möglich sein. Dies ist eine 
 
 ---
 
-## 5. FDS-Template
+## 4. FDS-Template
 
 Das bereitgestellte FDS-Template ist die gemeinsame technische Grundlage für Stufe 1. Es enthält:
 
@@ -148,7 +118,7 @@ Das Template soll sicherstellen, dass alle Teilnehmenden dieselben Mess- und Aus
 
 ---
 
-## 6. Nicht offengelegte Daten vor Abgabe
+## 5. Nicht offengelegte Daten vor Abgabe
 
 Die folgenden Informationen werden vor dem Abgabe-Freeze nicht bereitgestellt:
 
@@ -159,116 +129,34 @@ Die folgenden Informationen werden vor dem Abgabe-Freeze nicht bereitgestellt:
 
 Die bereitgestellte Massenverlustkurve ist eine gemittelte und geglättete Kurve aus drei Wiederholungen. Ihre Umsetzung in FDS, z. B. als HRR-Randbedingung oder als Massenverlustrate, muss von den Teilnehmenden dokumentiert werden.
 
-Das Szenario basiert auf drei Wiederholungsversuchen. Mit der Offenlegung der experimentellen Daten wird die Auswertung die experimentelle Wiederholbarkeit (Streuung zwischen den Wiederholungen) quantifizieren und als Referenzband berichten, damit die Streuung der Simulationsergebnisse relativ zur experimentellen Unsicherheit und nicht gegen eine einzelne Kurve interpretiert werden kann.
+Mit der Offenlegung der experimentellen Daten wird die Auswertung die experimentelle Wiederholbarkeit (Streuung zwischen den Wiederholungen) quantifizieren und als Referenzband berichten, damit die Streuung der Simulationsergebnisse relativ zur experimentellen Unsicherheit und nicht gegen eine einzelne Kurve interpretiert werden kann.
 
 ---
 
-## 7. Zielgrößen
+## 6. Zielgrößen
 
-### 7.1 Temperatur
+Die folgenden Größen werden ausgewertet. Genaue Höhen, Positionen und die Referenzwellenlänge sind in [`scenario/scenario_description.md`](scenario/scenario_description.md) (§8) und in den `DEVC`-Einträgen des FDS-Templates definiert:
 
-Temperaturen werden in den Räumen F1, F2 und F3 an den vorgegebenen Thermoelementpositionen ausgewertet.
+- **Temperatur** — Thermoelemente in F1, F2 und F3 an acht Höhen (0,6–2,5 m) sowie ein Deckenthermoelement über der Brandwanne in F1. Das Template verwendet `QUANTITY='THERMOCOUPLE'`, um die strahlungsbeeinflusste Perlenantwort der gemessenen Thermoelemente abzubilden.
+- **Lichtextinktion** — Extinktionskoeffizient σ [1/m] an den optischen Messpositionen, Referenzwellenlänge 638 nm.
+- **Rauchwarnmelderaktivierung** — optische Rauchwarnmelder (DIN EN 14604) an der Decke in F2, FC und F3.
+- **Personensicherheit** — durch die Teilnehmenden bewertet in F1, F2, FC und F3.
 
-Vorgesehene Auswertehöhen sind:
+### 6.1 Rauchwarnmelderaktivierung
 
-```text
-0.6 m
-1.2 m
-1.6 m
-1.8 m
-2.0 m
-2.2 m
-2.4 m
-2.5 m
-```
+Die Teilnehmenden sollen angeben, wie sie die Rauchwarnmelderaktivierung abbilden. Zulässig sind beispielsweise ein direktes FDS-Detektormodell, eine Aktivierung über eine selbst definierte optische Dichte bzw. Extinktionsschwelle oder eine andere dokumentierte und begründete Kenngröße.
 
-Zusätzlich wird im Brandraum F1 eine Deckentemperatur über der Brandwanne ausgewertet.
+In Stufe 1 wird keine gemeinsame „richtige“ Aktivierungsschwelle vorgegeben. Die Wahl der Aktivierungsmethode und des Schwellenwerts ist Teil der untersuchten Prognose: Die vorhergesagten Aktivierungszeiten werden mit den experimentell gemessenen Aktivierungszeiten verglichen, und die Streuung der gewählten Methoden wird analysiert, nicht entfernt.
 
-### 7.2 Lichtextinktion
+### 6.2 Bewertung der Personensicherheit
 
-Der Extinktionskoeffizient
+Für F1, F2, FC und F3 soll abgeschätzt werden, ab wann relevante Fluchtbehinderung erreicht wird und ab wann Handlungsunfähigkeit zu erwarten ist. Die Bewertungsmethode ist zu dokumentieren; mögliche Kriterien sind Lichtextinktion bzw. Sichtweite, Temperatur, Rauchschichtlage, CO-Konzentration oder eine kombinierte ingenieurmäßige Beurteilung.
 
-```text
-sigma [1/m]
-```
-
-wird an den optischen Messpositionen ausgewertet, insbesondere bei
-
-```text
-z = 2.3 m
-```
-
-in den Räumen:
-
-```text
-F1
-F2
-F3
-```
-
-Alle optischen Ergebnisse sollen auf die Referenzwellenlänge
-
-```text
-638 nm
-```
-
-bezogen werden.
-
-### 7.3 Rauchwarnmelderaktivierung
-
-Die Aktivierungszeiten der im Experiment installierten optischen Rauchwarnmelder werden ausgewertet. Die Sensoren waren optische Rauchwarnmelder nach:
-
-```text
-DIN EN 14604
-```
-
-Sie waren an der Decke in folgenden Bereichen installiert:
-
-```text
-F2
-FC
-F3
-```
-
-Die genaue Lage ist im FDS-Template über `DEVC`-Positionen definiert.
-
-Die Teilnehmenden sollen angeben, wie sie die Rauchwarnmelderaktivierung in ihrer Simulation abbilden. Zulässig sind beispielsweise:
-
-- direkte Nutzung eines FDS-Detektormodells,
-- Aktivierung über eine selbst definierte optische Dichte oder Extinktionsschwelle,
-- Aktivierung über eine andere dokumentierte und begründete Kenngröße.
-
-In Stufe 1 wird keine gemeinsame „richtige“ Aktivierungsschwelle vorgegeben. Die Teilnehmenden müssen Methode und Schwellenwert für ihre Prognose selbst festlegen, begründen und dokumentieren.
-
-Die Wahl der Aktivierungsmethode und des Schwellenwerts ist Teil der untersuchten Prognose. Die vorhergesagten Aktivierungszeiten werden mit den experimentell gemessenen Aktivierungszeiten verglichen; die Streuung der gewählten Methoden wird analysiert, nicht entfernt.
-
-### 7.4 Interpretation der Personensicherheit
-
-Die Teilnehmenden sollen ihre Simulationsergebnisse hinsichtlich der Personensicherheit in folgenden Räumen interpretieren:
-
-```text
-F1
-F2
-FC
-F3
-```
-
-Für jeden Raum soll abgeschätzt werden, ab wann:
-
-- relevante Fluchtbehinderung erreicht wird,
-- Handlungsunfähigkeit zu erwarten ist.
-
-Die Bewertungsmethode ist zu dokumentieren. Mögliche Kriterien sind Lichtextinktion bzw. Sichtweite, Temperatur, Rauchschichtlage, CO-Konzentration oder eine kombinierte ingenieurmäßige Beurteilung. Verwendete Kriterien und Grenzwerte müssen im Fragebogen angegeben werden.
-
-Die Wahl der Tauglichkeitskriterien und Grenzwerte ist selbst Gegenstand dieser Studie. Die Teilnehmenden legen ihre Kriterien daher selbst fest und begründen sie; die daraus resultierende Streuung der Kriterien und der vorhergesagten Tauglichkeitszeiten ist Teil der beabsichtigten Auswertung und wird mit den experimentellen Daten verglichen.
-
-Für den Vergleich mit den Experimentaldaten stehen die im FDS-Template vorgegebenen Größen und Positionen im Mittelpunkt. Für die eigene Bewertung der Personensicherheit dürfen die Teilnehmenden jedoch zusätzliche Größen, Sensorpositionen oder abgeleitete Kenngrößen verwenden, sofern diese im Fragebogen dokumentiert werden.
-
-Dazu können beispielsweise Sichtweite, Rauchschichtlage, FED-bezogene Größen, Gaskonzentrationen, Temperaturgrenzwerte an weiteren Höhen oder raumspezifische ingenieurmäßige Kriterien gehören.
+Die Wahl der Tauglichkeitskriterien und Grenzwerte ist selbst Gegenstand dieser Studie. Die Teilnehmenden legen ihre Kriterien daher selbst fest und begründen sie; die daraus resultierende Streuung der Kriterien und der vorhergesagten Tauglichkeitszeiten ist Teil der beabsichtigten Auswertung und wird mit den experimentellen Daten verglichen. Die Teilnehmenden dürfen zusätzliche Größen, Sensorpositionen oder abgeleitete Kenngrößen verwenden (z. B. Sichtweite, Rauchschichtlage, FED-bezogene Größen, Gaskonzentrationen), sofern diese im Fragebogen dokumentiert werden.
 
 ---
 
-## 8. Repository-Struktur
+## 7. Repository-Struktur
 
 ```text
 .
@@ -284,24 +172,20 @@ Dazu können beispielsweise Sichtweite, Rauchschichtlage, FED-bezogene Größen,
 │   ├── 25103-01_1OG.pdf
 │   ├── 25103-01_S01-06.pdf
 │   ├── 25103-01_1OG.dxf
-│   ├── S-02.dxf
-│   ├── S-03.dxf
-│   ├── S-04.dxf
-│   ├── S-05.dxf
-│   ├── S-06.dxf
+│   ├── S-02.dxf … S-06.dxf
 │   └── photos/
 ├── fds/
 │   └── hep_160_150_ParticipantID_RunID.fds
 └── docs/
     ├── Call_for_Participation_de.pdf
     ├── Call_for_Participation_en.pdf
+    ├── submission_format.md
     └── faq.md
-
 ```
 
 ---
 
-## 9. Teilnahmeablauf
+## 8. Teilnahmeablauf
 
 ### Schritt 1: Registrierung
 
@@ -311,13 +195,7 @@ Interessierte Personen, Gruppen oder Organisationen registrieren sich per E-Mail
 hasenheide@bcl-leipzig.de
 ```
 
-Aus einer Organisation oder Arbeitsgruppe können mehrere Einreichungen erfolgen. Jede geplante Einreichung erhält eine eigene anonyme Teilnehmer-ID, z. B.:
-
-```text
-K7M
-3QA
-BV5
-```
+Aus einer Organisation oder Arbeitsgruppe können mehrere Einreichungen erfolgen. Jede geplante Einreichung erhält eine eigene anonyme Teilnehmer-ID, z. B. `K7M`, `3QA`, `BV5`.
 
 ### Schritt 2: Datenpaket
 
@@ -325,65 +203,15 @@ Die Teilnehmenden verwenden die aktuelle freigegebene Version dieses Repositorie
 
 ### Schritt 3: Simulation
 
-Jede Gruppe führt mindestens eine Best-Estimate-Simulation des Szenarios `hep_160_150` mit FDS 6.11.0 durch.
-
-Optionale Sensitivitätsläufe können zusätzlich zur Best-Estimate-Prognose eingereicht werden.
+Jede Gruppe führt mindestens eine Best-Estimate-Simulation des Szenarios `hep_160_150` mit FDS 6.11.0 durch. Optionale Sensitivitätsläufe können zusätzlich eingereicht werden.
 
 ### Schritt 4: Fragebogen
 
-Die Teilnehmenden füllen den strukturierten Fragebogen aus:
-
-```text
-[NOCH ZU ERGÄNZEN: Link zum Fragebogen]
-```
-
-Der Fragebogen erfasst Modellierungsentscheidungen, Annahmen, relevante Metadaten sowie die Bewertung der Personensicherheit in den betrachteten Räumen F1, F2, FC und F3.
+Die Teilnehmenden füllen den strukturierten Fragebogen aus (siehe Abschnitt 9), der ab dem Kick-off in diesem Repository bereitsteht.
 
 ### Schritt 5: Abgabe
 
-Die Abgabe erfolgt als komprimiertes Archiv an die Projektkoordination.
-
-Archivname:
-
-```text
-VIB_Hasenheide_Stage1_<ParticipantID>.zip
-```
-
-Beispiel:
-
-```text
-VIB_Hasenheide_Stage1_K7M.zip
-```
-
-Das Archiv enthält die FDS-Eingabedatei, etwaige zusätzliche Dateien, die von der FDS-Eingabedatei referenziert werden, die FDS-Outputdatei und CSV-Ergebnisdateien.
-
-Für einen einzelnen Lauf:
-
-```text
-submission/
-├── *.fds
-├── *.out
-├── *.csv
-└── [optional] additional_files/
-```
-
-Für mehrere Läufe:
-
-```text
-submission/
-├── best_estimate/
-├── sensitivity_01/
-├── sensitivity_02/
-└── sensitivity_03/
-```
-
-Die Hauptprognose muss eindeutig als
-
-```text
-best_estimate
-```
-
-gekennzeichnet sein.
+Die Abgabe ist gemäß [`docs/submission_format.md`](docs/submission_format.md) zu packen und zu benennen: ein komprimiertes Archiv mit der/den FDS-Eingabedatei(en), etwaigen referenzierten Zusatzdateien, der FDS-Outputdatei (`.out`) und den CSV-Ergebnisdateien, wobei die Hauptprognose eindeutig als `best_estimate` gekennzeichnet ist.
 
 ### Schritt 6: Formale Abgabeprüfung
 
@@ -399,104 +227,13 @@ Nach dem Freeze werden die experimentellen Daten ausgewertet und den anonymisier
 
 ---
 
-## 10. CSV-Ergebnisdateien
+## 9. Fragebogen
 
-Die eingereichten CSV-Dateien sollen die Sensorausgaben aus dem FDS-Template widerspiegeln. Die Spaltennamen ergeben sich daher aus den `DEVC`-IDs im Template.
-
-### 10.1 Dateiname
-
-FDS generiert die Sensorausgabedatei automatisch aus der im Template definierten `CHID`. Bei unveränderter Verwendung der Template-`CHID`-Struktur ergibt sich:
-
-```text
-hep_160_150_<ParticipantID>_<RunID>_devc.csv
-```
-
-Beispiel für Teilnehmende K7M, Best-Estimate-Lauf:
-
-```text
-hep_160_150_K7M_best_estimate_devc.csv
-```
-
-Diese Datei ist in jeder Abgabe verpflichtend. Bei mehreren Läufen muss jedes Unterverzeichnis eine eigene `_devc.csv`-Datei enthalten.
-
-### 10.2 Spaltenstruktur
-
-Die erste Spalte ist stets `Time` (in Sekunden). Die weiteren Spalten entsprechen den `DEVC`-IDs aus dem Template in der Reihenfolge der Einträge in der FDS-Eingabedatei.
-
-**Temperaturprofile** — 8 Höhen je Raum (0,6 / 1,2 / 1,6 / 1,8 / 2,0 / 2,2 / 2,4 / 2,5 m):
-
-| ID-Muster | Raum | Spaltennamen |
-|---|---|---|
-| `TC_F1_<h>` | F1 | `TC_F1_0_6`, `TC_F1_1_2`, …, `TC_F1_2_5` |
-| `TC_F2_<h>` | F2 | `TC_F2_0_6`, `TC_F2_1_2`, …, `TC_F2_2_5` |
-| `TC_F3_<h>` | F3 | `TC_F3_0_6`, `TC_F3_1_2`, …, `TC_F3_2_5` |
-
-Höhennotation: Dezimalpunkt wird durch Unterstrich ersetzt, z. B. 0,6 m → `0_6`, 2,5 m → `2_5`.
-
-**Extinktionskoeffizientenprofile** — gleiche Positionen wie Temperaturprofile:
-
-| ID-Muster | Raum |
-|---|---|
-| `EXT_F1_<h>` | F1 |
-| `EXT_F2_<h>` | F2 |
-| `EXT_F3_<h>` | F3 |
-
-**Deckenthermocouples:**
-
-| Spaltenname | Ort |
-|---|---|
-| `TC_Ceiling_F1` | F1, über Brandwanne |
-
-**Optische Messpositionen** (exakte Positionen der experimentellen Messgeräte):
-
-| Spaltenname | Raum | Höhe [m] |
-|---|---|---|
-| `EXT_DEVC_F1_2_3` | F1 | 2,3 |
-| `EXT_DEVC_F2_1_5` | F2 | 1,5 |
-| `EXT_DEVC_F2_1_9` | F2 | 1,9 |
-| `EXT_DEVC_F2_2_1` | F2 | 2,1 |
-| `EXT_DEVC_F2_2_3` | F2 | 2,3 |
-| `EXT_DEVC_F3_2_3` | F3 | 2,3 |
-
-**Rauchwarnmelderpositionen** (Extinktionskoeffizient an der Decke):
-
-| Spaltenname | Raum |
-|---|---|
-| `SD_F2_EXT` | F2 |
-| `SD_FC_EXT` | FC |
-| `SD_F3_EXT` | F3 |
-
-### 10.3 Hinweise
-
-- Die `DEVC`-Einträge im Template dürfen nicht umbenannt oder entfernt werden. Einheitliche Spaltennamen über alle Abgaben sind Voraussetzung für automatisiertes Post-Processing und den Vergleich.
-- Zusätzliche `DEVC`-Einträge der Teilnehmenden (z. B. für Sensitivitätsausgaben oder Personensicherheitskenngrößen) dürfen als weitere Spalten enthalten sein. Sie beeinflussen die Pflichtspalten nicht.
-- Die von FDS generierte `_devc.csv`-Datei verwendet einen zweizeiligen Header: Die erste Zeile enthält die `DEVC`-IDs, die zweite Zeile die physikalischen Einheiten. Beide Zeilen müssen in der eingereichten Datei vorhanden sein.
-- Die Rauchwarnmelder-`DEVC`-Einträge (`SD_F2_EXT`, `SD_FC_EXT`, `SD_F3_EXT`) enthalten einen Platzhalter `SETPOINT=...`. Dieser ist durch den selbst gewählten Aktivierungsschwellenwert in 1/m zu ersetzen. Mit definiertem `SETPOINT` trägt FDS die Aktivierungszeit automatisch in die `.out`-Datei unter „DEVICE Activation Times" ein. Die `_devc.csv` enthält weiterhin unverändert die kontinuierliche Extinktionskoeffizienten-Zeitreihe.
+Ein strukturierter Fragebogen ist verpflichtender Bestandteil jeder Abgabe. Statt der Werte selbst (die direkt aus der Eingabedatei ablesbar sind) erfasst er die **Begründungen und Quellen** hinter den freien Modellierungsentscheidungen — Brennstoff- und Verbrennungsparameter, Mesh, Wandrandbedingungen, Leckage und Rauchwarnmeldermethode — zusammen mit der Bewertung der Personensicherheit für F1, F2, FC und F3 sowie einigen Angaben zum Teilnehmerkontext. Der Fragebogen steht ab dem Kick-off in diesem Repository bereit.
 
 ---
 
-## 11. Inhalte des Fragebogens
-
-Der Fragebogen erfasst unter anderem:
-
-- Teilnehmer-ID und Run-ID,
-- ob die Simulation einzeln oder im Team durchgeführt wurde,
-- Begründung und Literaturquellen für das C7-Surrogat, einschließlich Rußausbeute, CO-Ausbeute, Strahlungsanteil, Verbrennungswärme und massenspezifischem Extinktionskoeffizienten,
-- Quellen der Verbrennungsparameter (experimentelle Daten, Handbuchwert, FDS-Default, ingenieurmäßige Abschätzung),
-- Begründung der Gitterauflösung und angestrebtes D*/dx nahe der Brandquelle,
-- Begründung der Wandrandbedingungen und Materialeigenschaften,
-- Vorgehen bei der Leckagemodellierung und dessen Begründung,
-- Grundlage und Quelle für den Rauchwarnmelder-Schwellenwert bzw. das Detektormodell,
-- ob die vorgegebene Massenkurve vor dem FDS-Input zusätzlich geglättet wurde,
-- durchgeführte, aber nicht eingereichte Sensitivitätsstudien,
-- Bewertung der Personensicherheit: Kriterien, Grenzwerte, Bewertungshöhen und Zeiten bis zum Erreichen untragbarer Bedingungen in F1, F2, FC und F3,
-- Nutzung von KI-Werkzeugen im Modellierungsprozess,
-- selbsteingeschätzte Konfidenz in die quantitativen Ergebnisse und die Bewertung der Personensicherheit,
-- aus Sicht der Teilnehmenden einflussreichste und unsicherste Modellierungsentscheidung.
-
----
-
-## 12. Empfohlene optionale Sensitivitäten
+## 10. Empfohlene optionale Sensitivitäten
 
 Die folgenden Sensitivitätsstudien werden empfohlen, sind aber nicht verpflichtend:
 
@@ -513,7 +250,7 @@ Sensitivitäten sollen nicht zur nachträglichen Auswahl der „besten“ Kurve 
 
 ---
 
-## 13. Vorläufiger Zeitplan
+## 11. Vorläufiger Zeitplan
 
 | Phase | Beschreibung | Termin / Frist | Status |
 |---|---|---|---|
@@ -530,15 +267,9 @@ Sensitivitäten sollen nicht zur nachträglichen Auswahl der „besten“ Kurve 
 
 ---
 
-## 14. Anonymisierung, Veröffentlichung und Autorenschaft
+## 12. Anonymisierung, Veröffentlichung und Autorenschaft
 
-Die Abgaben werden zunächst intern durch das Auswertungsteam ausgewertet. In Berichten und Präsentationen werden Gruppen anonymisiert dargestellt, z. B.:
-
-```text
-K7M
-3QA
-BV5
-```
+Die Abgaben werden zunächst intern durch das Auswertungsteam ausgewertet. In Berichten und Präsentationen werden Gruppen anonymisiert dargestellt, z. B. `K7M`, `3QA`, `BV5`.
 
 Bei einer wissenschaftlichen Veröffentlichung können aktive Teilnehmende als Co-Autorinnen und Co-Autoren geführt werden, sofern sie zustimmen und die üblichen Voraussetzungen für eine Autorenschaft erfüllen. Autorenschaft und Reihenfolge werden vor Einreichung transparent abgestimmt.
 
@@ -553,7 +284,7 @@ Eine Veröffentlichung einzelner FDS-Dateien oder detaillierter Teilnehmendenerg
 
 ---
 
-## 15. Rückfragen und verbindliche Antworten
+## 13. Rückfragen und verbindliche Antworten
 
 Rückfragen sollen schriftlich an die Projektkoordination gerichtet werden:
 
@@ -561,17 +292,11 @@ Rückfragen sollen schriftlich an die Projektkoordination gerichtet werden:
 hasenheide@bcl-leipzig.de
 ```
 
-Antworten, die für alle Teilnehmenden relevant sind, werden anonymisiert veröffentlicht in:
-
-```text
-docs/faq.md
-```
-
-Verbindlich sind ausschließlich Informationen, die in diesem Repository oder in einem offiziellen Release dokumentiert sind.
+Antworten, die für alle Teilnehmenden relevant sind, werden anonymisiert in [`docs/faq.md`](docs/faq.md) veröffentlicht. Verbindlich sind ausschließlich Informationen, die in diesem Repository oder in einem offiziellen Release dokumentiert sind.
 
 ---
 
-## 16. Versionierung
+## 14. Versionierung
 
 Verbindlich für die Teilnahme ist der jeweils freigegebene GitHub-Release:
 
@@ -583,7 +308,7 @@ Bei Abweichungen zwischen dem veröffentlichten Call for Participation und diese
 
 ---
 
-## 17. Kontakt
+## 15. Kontakt
 
 Projektkoordination:
 
@@ -596,7 +321,7 @@ hasenheide@bcl-leipzig.de
 
 ---
 
-## 18. Checkliste für die Abgabe
+## 16. Checkliste für die Abgabe
 
 Vor der Abgabe bitte prüfen:
 
@@ -605,16 +330,16 @@ Vor der Abgabe bitte prüfen:
 - [ ] FDS-Eingabedatei `*.fds` ist enthalten.
 - [ ] FDS-Outputdatei `*.out` ist enthalten.
 - [ ] CSV-Ergebnisdateien `*.csv` sind enthalten.
-- [ ] CSV-Spalten entsprechen den `DEVC`-IDs im FDS-Template.
+- [ ] CSV-Spalten entsprechen den `DEVC`-IDs im FDS-Template (siehe [`docs/submission_format.md`](docs/submission_format.md)).
 - [ ] Zusätzliche Dateien, die von der FDS-Eingabedatei referenziert werden, sind enthalten.
 - [ ] Zusätzliche Größen, Sensorpositionen oder abgeleitete Kenngrößen für die Bewertung der Personensicherheit sind dokumentiert.
 - [ ] Es wurden keine experimentellen Zielmessdaten verwendet.
 - [ ] Das Archiv folgt der Namenskonvention.
-- [ ] Der Fragebogen ist ausgefüllt: `[NOCH ZU ERGÄNZEN: Link zum Fragebogen]`.
+- [ ] Der Fragebogen ist ausgefüllt.
 - [ ] Das Archiv wurde an `hasenheide@bcl-leipzig.de` gesendet.
 
 ---
 
-## 19. Kurzbeschreibung
+## 17. Kurzbeschreibung
 
 Stufe 1 der VIB Hasenheide FDS-Ringsimulation ist eine semi-blinde FDS-Prognosestudie für das Brandszenario `hep_160_150`. Die Teilnehmenden erhalten eine gemeinsame Szenariobeschreibung, Geometrie, Randbedingungen, Messpositionen, eine gemittelte und geglättete Massenverlustkurve sowie ein FDS-Template. Experimentelle Temperaturen, optische Extinktionsdaten und Rauchwarnmelderaktivierungszeiten bleiben bis zur Abgabe verborgen. Zentrale Modellierungsentscheidungen wie Gitterauflösung, Brandquellenumsetzung, Rußausbeute, Strahlungsanteil, Leckageannahmen, Wandmodellierung, Rauchwarnmelder-Schwellen und Kriterien zur Bewertung der Personensicherheit bleiben frei und müssen dokumentiert werden. Ziel ist die Quantifizierung der Streuung von FDS-Prognosen und die Identifikation dominanter Einflussgrößen für Rauchtransport, Temperaturentwicklung, Lichtextinktion, Rauchwarnmelderaktivierung und Personensicherheit.

@@ -6,7 +6,8 @@
 **Exercise type:** Semi-blind prediction  
 **Simulation code:** Fire Dynamics Simulator (FDS) 6.11.0  
 **Status:** Preparation / Call for Participation  
-**Organiser:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)
+**Organiser:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)  
+**License:** CC BY 4.0 (see [LICENSE](LICENSE))
 
 ---
 
@@ -32,35 +33,24 @@ The findings characterise the prediction variability for this specific scenario 
 
 ---
 
-## 2. Scenario
+## 2. Scenario and provided data
 
-Stage 1 uses the experimental setup:
+Stage 1 uses the experimental setup `hep_160_150` — a series of three replicate liquid pool fire tests conducted in a vacant residential building. The fire was located in room F1 of the test apartment “Fluppe”. The full scenario description is in [`scenario/scenario_description.md`](scenario/scenario_description.md).
 
-```text
-hep_160_150
-```
+**At a glance**
 
-The identifier refers to a test setup with three replicate tests, not to one individual experiment. The tests were liquid pool fire experiments conducted in a vacant residential building. The fire was located in room F1 of the test apartment “Fluppe”.
-
-| Item | Description |
+| Item | Value |
 |---|---|
 | Scenario ID | `hep_160_150` |
 | Fire compartment | F1 |
-| Fuel | Commercial “heptane”, C7-UVCB hydrocarbon mixture |
-| Suggested FDS surrogate fuel | Participant-defined C7 surrogate or user-defined reaction |
-| Burner / pan geometry | Square pan |
-| Pan size | 160 mm × 160 mm |
-| Pan depth | 100 mm |
-| Initial fuel mass | 150 g |
-| Fuel mass history | Averaged and smoothed fuel mass curve derived from three replicate tests |
+| Fuel | Commercial “heptane”, C7-UVCB hydrocarbon mixture (n-/iso-/cyclic alkanes) |
+| Pan | 160 mm × 160 mm × 100 mm, 150 g initial fuel mass |
 | Replicate tests | 3 |
 | Evaluation period | Pre-ventilation period |
-| Main quantities of interest | Gas temperature, optical extinction, smoke alarm actuation, tenability |
-| Optical reference wavelength | 638 nm |
-| Smoke alarms | Optical smoke alarms according to DIN EN 14604 |
+| Quantities of interest | Gas temperature, optical extinction (638 nm), smoke alarm actuation (DIN EN 14604), tenability |
 | FDS version | FDS 6.11.0 |
 
-The relevant apartment layout consists of three interconnected rooms and a corridor:
+The apartment layout consists of three interconnected rooms and a corridor:
 
 - **F1:** fire compartment,
 - **F2:** adjacent room,
@@ -75,38 +65,18 @@ Internal doors between these areas were removed. Windows remained closed during 
 
 ![View from FC to F1/F2](geometry/photos/View_FC-F2.jpg)
 
----
+**Provided uniformly to all participants:**
 
-## 3. Provided input data
+- Scenario description — [`scenario/scenario_description.md`](scenario/scenario_description.md) (test sequence, fuel composition, ambient conditions, instrumentation, measurement heights and locations).
+- Geometry — floor plan, sections and DXF drawings in [`geometry/`](geometry/) ([floor plan PDF](geometry/Floor_plan_overview.pdf)).
+- FDS template with the reference geometry and all measurement locations as `DEVC` — [`fds/`](fds/).
+- Averaged and smoothed fuel mass history — [`scenario/mass_loss_hep_160_150.csv`](scenario/mass_loss_hep_160_150.csv).
 
-The following information is provided uniformly to all participants and shall be used for the Stage 1 submission.
-
-| Category | Provided information |
-|---|---|
-| Scenario | `hep_160_150` |
-| Test description | Test sequence, ignition, pre-ventilation period and subsequent ventilation |
-| Boundary conditions | Documented initial and ambient conditions |
-| Drawings | Floor plan, room heights, sections, room names and relevant dimensions [Floor plan (PDF)](geometry/Floor_plan_overview.pdf) |
-| FDS version | FDS 6.11.0 |
-| FDS template | Input file with reference geometry and measurement locations |
-| Instrumentation | `DEVC` entries for thermocouples, optical measurement points and smoke alarm locations |
-| Fuel mass history | Averaged and smoothed fuel mass curve derived from the three replicate tests |
-| Building layout | Rooms F1, F2, F3 and FC according to drawings and template |
-| Fire location | Centre of the pan in room F1 |
-| Pan dimensions | 160 mm × 160 mm × 100 mm |
-| Fuel information | C7-UVCB mixture of n-alkanes, iso-alkanes and cyclic alkanes (predominantly n-heptane and methylcyclohexane) |
-| Initial fuel mass | 150 g |
-| Window condition | Closed during the pre-ventilation period |
-| Door condition | Internal doors removed; stairwell door closed during the pre-ventilation period |
-| Measurement locations | Coordinates of thermocouples, optical measurement points and smoke alarms |
-| Evaluation period | Pre-ventilation period |
-| Submission format | FDS input file, FDS output file, CSV result files and questionnaire |
-| Questionnaire link | `[TO BE ADDED: questionnaire link]` |
-| Anonymisation | Participants are anonymised in intermediate evaluations |
+This information defines a common baseline; detailed values are given in the scenario description and the FDS template.
 
 ---
 
-## 4. Modelling choices left to the participants
+## 3. Modelling choices left to the participants
 
 The following modelling choices are intentionally left to the participants. They must be documented and justified in the questionnaire.
 
@@ -133,7 +103,7 @@ The best-estimate prediction should be as realistic as possible. This is a predi
 
 ---
 
-## 5. FDS template
+## 4. FDS template
 
 The provided FDS template is the common technical basis for Stage 1. It contains:
 
@@ -148,7 +118,7 @@ The template is intended to ensure that all participants use the same measuremen
 
 ---
 
-## 6. Data not disclosed before submission
+## 5. Data not disclosed before submission
 
 The following information is not provided before the submission freeze:
 
@@ -159,114 +129,34 @@ The following information is not provided before the submission freeze:
 
 The provided fuel mass history is an averaged and smoothed curve derived from three replicate tests. Its implementation in FDS, for example as a prescribed heat release rate or as a mass loss rate, must be documented by the participants.
 
-The scenario is based on three replicate tests. When the experimental data are released, the evaluation will quantify the experimental repeatability (replicate scatter) and report it as a reference band, so that the spread of the simulation results can be interpreted relative to the experimental uncertainty rather than against a single curve.
+When the experimental data are released, the evaluation will quantify the experimental repeatability (replicate scatter) and report it as a reference band, so that the spread of the simulation results can be interpreted relative to the experimental uncertainty rather than against a single curve.
 
 ---
 
-## 7. Quantities of interest
+## 6. Quantities of interest
 
-### 7.1 Gas temperature
+The following quantities are evaluated. Exact heights, locations and the reference wavelength are defined in [`scenario/scenario_description.md`](scenario/scenario_description.md) (§8) and in the FDS template `DEVC` entries:
 
-Gas temperatures are evaluated in rooms F1, F2 and F3 at the specified thermocouple locations.
+- **Gas temperature** — thermocouples in F1, F2 and F3 at eight heights (0.6–2.5 m), plus a ceiling thermocouple above the pan in F1. The template uses `QUANTITY='THERMOCOUPLE'` to match the radiation-affected bead response of the measured thermocouples.
+- **Optical extinction** — extinction coefficient σ [1/m] at the optical measurement locations, reference wavelength 638 nm.
+- **Smoke alarm actuation** — optical smoke alarms (DIN EN 14604) at the ceiling in F2, FC and F3.
+- **Tenability** — assessed by the participant in F1, F2, FC and F3.
 
-Measurement heights:
+### 6.1 Smoke alarm actuation
 
-```text
-0.6 m
-1.2 m
-1.6 m
-1.8 m
-2.0 m
-2.2 m
-2.4 m
-2.5 m
-```
+Participants shall state how smoke alarm actuation is represented in their simulation. Acceptable approaches include, for example, a direct FDS detector model, actuation based on a participant-defined optical density or extinction threshold, or another documented and justified quantity.
 
-In addition, a ceiling gas temperature above the pan is evaluated in the fire compartment F1.
+No common “correct” actuation threshold is prescribed in Stage 1. The participant's choice of activation method and threshold is part of the prediction under study: predicted activation times are compared against the experimentally measured activation times, and the variability of the chosen methods is analysed rather than removed.
 
-### 7.2 Optical extinction
+### 6.2 Tenability assessment
 
-The optical extinction coefficient
+For each of F1, F2, FC and F3, participants shall estimate when conditions relevant to impaired egress are reached and when incapacitation is expected. The assessment methodology shall be documented; possible criteria include optical extinction or visibility, gas temperature, smoke layer height, CO concentration or a combined engineering judgement.
 
-```text
-sigma [1/m]
-```
-
-is evaluated at the optical measurement locations, in particular at
-
-```text
-z = 2.3 m
-```
-
-in the rooms:
-
-```text
-F1
-F2
-F3
-```
-
-All optical results shall refer to the reference wavelength:
-
-```text
-638 nm
-```
-
-### 7.3 Smoke alarm actuation
-
-The actuation times of the optical smoke alarms installed in the experiment are evaluated. The smoke alarms were optical devices according to:
-
-```text
-DIN EN 14604
-```
-
-They were installed at the ceiling in:
-
-```text
-F2
-FC
-F3
-```
-
-The exact locations are defined in the FDS template via `DEVC` positions.
-
-Participants shall state how smoke alarm actuation is represented in their simulation. Acceptable approaches include, for example:
-
-- direct use of an FDS detector model,
-- actuation based on a participant-defined optical density or extinction threshold,
-- actuation based on another documented and justified quantity.
-
-No common “correct” actuation threshold is prescribed in Stage 1. Participants must define, justify and document the method and threshold used for their own prediction.
-
-The participant's choice of activation method and threshold is part of the prediction under study. Predicted activation times are compared against the experimentally measured activation times; the variability of the chosen methods is analysed rather than removed.
-
-### 7.4 Tenability assessment
-
-Participants shall interpret their simulation results with respect to tenability in the following compartments:
-
-```text
-F1
-F2
-FC
-F3
-```
-
-For each room, participants shall estimate when:
-
-- conditions relevant to impaired egress are reached,
-- incapacitation is expected.
-
-The assessment methodology shall be documented. Possible criteria include optical extinction or visibility, gas temperature, smoke layer height, CO concentration or a combined engineering judgement. The applied criteria and threshold values shall be specified in the questionnaire.
-
-The choice of tenability criteria and threshold values is itself an object of this study. Participants therefore define and justify their own criteria; the resulting variability in the criteria and in the predicted tenability times is part of the intended analysis and is compared against the experimental data.
-
-For the common comparison, the quantities and locations defined in the FDS template form the primary basis. However, participants may use additional quantities, sensor locations or derived indicators for their own tenability assessment, provided that these are documented in the questionnaire.
-
-Such additional information may include, for example, visibility, smoke layer height, FED-related quantities, gas concentrations, temperature limits at additional heights or compartment-specific engineering criteria.
+The choice of tenability criteria and threshold values is itself an object of this study. Participants therefore define and justify their own criteria; the resulting variability in the criteria and in the predicted tenability times is part of the intended analysis and is compared against the experimental data. Participants may use additional quantities, sensor locations or derived indicators (e.g. visibility, smoke layer height, FED-related quantities, gas concentrations) provided these are documented in the questionnaire.
 
 ---
 
-## 8. Repository structure
+## 7. Repository structure
 
 ```text
 .
@@ -282,24 +172,20 @@ Such additional information may include, for example, visibility, smoke layer he
 │   ├── 25103-01_1OG.pdf
 │   ├── 25103-01_S01-06.pdf
 │   ├── 25103-01_1OG.dxf
-│   ├── S-02.dxf
-│   ├── S-03.dxf
-│   ├── S-04.dxf
-│   ├── S-05.dxf
-│   ├── S-06.dxf
+│   ├── S-02.dxf … S-06.dxf
 │   └── photos/
 ├── fds/
 │   └── hep_160_150_ParticipantID_RunID.fds
 └── docs/
     ├── Call_for_Participation_de.pdf
     ├── Call_for_Participation_en.pdf
+    ├── submission_format.md
     └── faq.md
-
 ```
 
 ---
 
-## 9. Participation workflow
+## 8. Participation workflow
 
 ### Step 1: Registration
 
@@ -309,13 +195,7 @@ Interested individuals, teams or organisations register by email:
 hasenheide@bcl-leipzig.de
 ```
 
-Multiple submissions from the same organisation or working group are possible. Each planned submission receives a separate anonymous participant ID, for example:
-
-```text
-K7M
-3QA
-BV5
-```
+Multiple submissions from the same organisation or working group are possible. Each planned submission receives a separate anonymous participant ID, for example `K7M`, `3QA`, `BV5`.
 
 ### Step 2: Data package
 
@@ -323,63 +203,15 @@ Participants use the current released version of this repository. Only official 
 
 ### Step 3: Simulation
 
-Each group performs at least one best-estimate simulation of `hep_160_150` using FDS 6.11.0.
-
-Optional sensitivity cases may be submitted in addition to the best-estimate prediction.
+Each group performs at least one best-estimate simulation of `hep_160_150` using FDS 6.11.0. Optional sensitivity cases may be submitted in addition to the best-estimate prediction.
 
 ### Step 4: Questionnaire
 
-Participants complete the structured questionnaire:
-
-```text
-[TO BE ADDED: questionnaire link]
-```
-
-The questionnaire records modelling choices, assumptions, relevant metadata and the tenability assessment for the rooms F1, F2 and F3.
+Participants complete the structured questionnaire (see Section 9), which is available in this repository from the kick-off.
 
 ### Step 5: Submission
 
-Submissions are sent as compressed archives to the project coordination.
-
-Archive name:
-
-```text
-VIB_Hasenheide_Stage1_<ParticipantID>.zip
-```
-
-Example:
-
-```text
-VIB_Hasenheide_Stage1_K7M.zip
-```
-
-The archive shall contain the FDS input file, any additional files referenced by the FDS input, the FDS output file and CSV result files.
-
-For a single case:
-
-```text
-submission/
-├── *.fds
-├── *.out
-├── *.csv
-└── [optional] additional_files/
-```
-
-For multiple cases:
-
-```text
-submission/
-├── best_estimate/
-├── sensitivity_01/
-├── sensitivity_02/
-└── sensitivity_03/
-```
-
-The main prediction must be clearly identified as:
-
-```text
-best_estimate
-```
+Package and name the submission as described in [`docs/submission_format.md`](docs/submission_format.md): a compressed archive containing the FDS input file(s), any referenced additional files, the FDS output file (`.out`) and the CSV result files, with the main prediction clearly identified as `best_estimate`.
 
 ### Step 6: Formal submission check
 
@@ -395,104 +227,13 @@ After the freeze, the experimental data are evaluated and compared with the anon
 
 ---
 
-## 10. CSV result files
+## 9. Questionnaire
 
-The submitted CSV files shall mirror the device outputs defined in the FDS template. The column names are therefore derived from the `DEVC` IDs in the template.
-
-### 10.1 File naming
-
-FDS generates the device output file automatically from the `CHID` defined in the template. Using the template without modification to the `CHID` structure produces:
-
-```text
-hep_160_150_<ParticipantID>_<RunID>_devc.csv
-```
-
-Example for participant K7M, best-estimate case:
-
-```text
-hep_160_150_K7M_best_estimate_devc.csv
-```
-
-This file is required in every submission. For multiple cases, each subdirectory must contain its own `_devc.csv` file.
-
-### 10.2 Column structure
-
-The first column is always `Time` (in seconds). The remaining columns correspond to the `DEVC` IDs defined in the template, in the order they appear in the FDS input file.
-
-**Thermocouple profiles** — 8 heights per room (0.6, 1.2, 1.6, 1.8, 2.0, 2.2, 2.4, 2.5 m):
-
-| ID pattern | Room | Column names |
-|---|---|---|
-| `TC_F1_<h>` | F1 | `TC_F1_0_6`, `TC_F1_1_2`, …, `TC_F1_2_5` |
-| `TC_F2_<h>` | F2 | `TC_F2_0_6`, `TC_F2_1_2`, …, `TC_F2_2_5` |
-| `TC_F3_<h>` | F3 | `TC_F3_0_6`, `TC_F3_1_2`, …, `TC_F3_2_5` |
-
-Height notation: the decimal point is replaced by an underscore, e.g. 0.6 m → `0_6`, 2.5 m → `2_5`.
-
-**Extinction coefficient profiles** — same positions as thermocouple profiles:
-
-| ID pattern | Room |
-|---|---|
-| `EXT_F1_<h>` | F1 |
-| `EXT_F2_<h>` | F2 |
-| `EXT_F3_<h>` | F3 |
-
-**Ceiling thermocouples:**
-
-| Column name | Location |
-|---|---|
-| `TC_Ceiling_F1` | F1, above fire pan |
-
-**Optical measurement device positions** (exact experimental instrument locations):
-
-| Column name | Room | Height [m] |
-|---|---|---|
-| `EXT_DEVC_F1_2_3` | F1 | 2.3 |
-| `EXT_DEVC_F2_1_5` | F2 | 1.5 |
-| `EXT_DEVC_F2_1_9` | F2 | 1.9 |
-| `EXT_DEVC_F2_2_1` | F2 | 2.1 |
-| `EXT_DEVC_F2_2_3` | F2 | 2.3 |
-| `EXT_DEVC_F3_2_3` | F3 | 2.3 |
-
-**Smoke alarm positions** (extinction coefficient at ceiling):
-
-| Column name | Room |
-|---|---|
-| `SD_F2_EXT` | F2 |
-| `SD_FC_EXT` | FC |
-| `SD_F3_EXT` | F3 |
-
-### 10.3 Notes
-
-- Do not rename or remove the `DEVC` entries defined in the template. This ensures consistent column names across all submissions and enables automated post-processing.
-- If additional `DEVC` entries are added by the participant (e.g. for sensitivity outputs or tenability indicators), these appear as additional columns and do not affect the required columns listed above.
-- The `_devc.csv` file generated by FDS uses a two-line header: the first line contains the `DEVC` IDs, the second line the physical units. Both lines must be present in the submitted file.
-- The smoke alarm `DEVC` entries (`SD_F2_EXT`, `SD_FC_EXT`, `SD_F3_EXT`) contain a `SETPOINT=...` placeholder. Replace `...` with the participant-defined activation threshold in 1/m. With `SETPOINT` defined, FDS records the activation time automatically in the `.out` file under "DEVICE Activation Times". The `_devc.csv` continues to contain the continuous extinction coefficient time series unchanged.
+A structured questionnaire is a mandatory part of each submission. Rather than the values themselves (which are read directly from the input file), it records the **reasoning and sources** behind the open modelling choices — fuel and combustion parameters, mesh, wall boundary conditions, leakage and the smoke-alarm method — together with the tenability assessment for F1, F2, FC and F3 and some participant context. The questionnaire is provided in this repository from the kick-off.
 
 ---
 
-## 11. Questionnaire contents
-
-The questionnaire records, among other items:
-
-- participant ID and run ID,
-- whether the simulation was performed individually or as a team,
-- justification and literature references for the C7 surrogate fuel, including soot yield, CO yield, radiative fraction, heat of combustion and mass-specific extinction coefficient,
-- sources for combustion parameters (experimental data, handbook value, FDS default, engineering judgement),
-- justification for mesh resolution and target D*/dx near the fire source,
-- justification for wall boundary conditions and material properties,
-- approach to air leakage modelling and its justification,
-- basis and reference for the smoke alarm activation threshold or detector model,
-- whether additional smoothing was applied to the prescribed mass curve prior to FDS input,
-- sensitivity studies performed but not submitted,
-- tenability assessment: criteria, thresholds, assessment heights and times to untenable conditions in F1, F2, FC and F3,
-- use of AI tools in the modelling process,
-- self-assessed confidence in quantitative outputs and tenability assessment,
-- main influential and uncertain modelling choices from the participant’s perspective.
-
----
-
-## 12. Recommended optional sensitivity analyses
+## 10. Recommended optional sensitivity analyses
 
 The following sensitivity analyses are recommended but not mandatory:
 
@@ -509,7 +250,7 @@ Sensitivity analyses shall not be used to select the “best” curve after the 
 
 ---
 
-## 13. Preliminary schedule
+## 11. Preliminary schedule
 
 | Phase | Description | Date / Deadline | Status |
 |---|---|---|---|
@@ -526,15 +267,9 @@ Sensitivity analyses shall not be used to select the “best” curve after the 
 
 ---
 
-## 14. Anonymisation, publication and authorship
+## 12. Anonymisation, publication and authorship
 
-Submissions are initially evaluated internally by the evaluation team. In reports and presentations, participant groups are anonymised, for example as:
-
-```text
-P01
-P02
-P03
-```
+Submissions are initially evaluated internally by the evaluation team. In reports and presentations, participant groups are anonymised, for example as `K7M`, `3QA`, `BV5`.
 
 If a scientific publication is prepared, active contributors may be invited as co-authors if they agree and meet the usual authorship criteria. Authorship and author order will be discussed transparently before submission.
 
@@ -549,7 +284,7 @@ Individual FDS files or detailed participant results will only be published afte
 
 ---
 
-## 15. Questions and official answers
+## 13. Questions and official answers
 
 Questions shall be sent in writing to the project coordination:
 
@@ -557,17 +292,11 @@ Questions shall be sent in writing to the project coordination:
 hasenheide@bcl-leipzig.de
 ```
 
-Answers that are relevant to all participants will be published anonymously in:
-
-```text
-docs/faq.md
-```
-
-Only information documented in this repository or in an official release is binding.
+Answers that are relevant to all participants will be published anonymously in [`docs/faq.md`](docs/faq.md). Only information documented in this repository or in an official release is binding.
 
 ---
 
-## 16. Versioning
+## 14. Versioning
 
 Participation shall be based on the official GitHub release:
 
@@ -579,7 +308,7 @@ In case of any discrepancy between the published Call for Participation and this
 
 ---
 
-## 17. Contact
+## 15. Contact
 
 Project coordination:
 
@@ -592,7 +321,7 @@ hasenheide@bcl-leipzig.de
 
 ---
 
-## 18. Submission checklist
+## 16. Submission checklist
 
 Before submission, please check:
 
@@ -601,16 +330,16 @@ Before submission, please check:
 - [ ] FDS input file `*.fds` is included.
 - [ ] FDS output file `*.out` is included.
 - [ ] CSV result files `*.csv` are included.
-- [ ] CSV columns correspond to the `DEVC` IDs defined in the FDS template.
+- [ ] CSV columns correspond to the `DEVC` IDs defined in the FDS template (see [`docs/submission_format.md`](docs/submission_format.md)).
 - [ ] Additional files referenced by the FDS input are included.
 - [ ] Additional quantities, sensor locations or derived indicators used for the tenability assessment are documented.
 - [ ] No experimental target data were used.
 - [ ] Archive follows the naming convention.
-- [ ] Questionnaire is completed: `[TO BE ADDED: questionnaire link]`.
+- [ ] Questionnaire is completed.
 - [ ] Archive is sent to `hasenheide@bcl-leipzig.de`.
 
 ---
 
-## 19. Short summary
+## 17. Short summary
 
 Stage 1 of the VIB Hasenheide FDS Round-Robin Study is a semi-blind FDS prediction exercise for the compartment fire scenario `hep_160_150`. Participants receive a common scenario description, geometry, boundary conditions, measurement locations, averaged and smoothed fuel mass history and an FDS template. Experimental gas temperatures, optical extinction data and smoke alarm actuation times remain hidden until submission. Key modelling choices such as mesh resolution, fire source specification, soot yield, radiative fraction, leakage assumptions, wall boundary conditions, smoke alarm thresholds and tenability criteria remain open and must be documented. The aim is to quantify the variability of FDS predictions and identify dominant modelling influences for smoke transport, thermal conditions, optical extinction, smoke alarm actuation and tenability assessment.

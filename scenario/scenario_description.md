@@ -141,11 +141,11 @@ The thermocouples had a bead diameter of approximately 1 mm. The FDS template th
 
 ### 8.2 Optical measurements
 
-Light-extinction measurements were installed at defined locations in the apartment. The relevant optical measurement locations for this scenario are provided in the FDS template and associated measurement-location files.
+Light-extinction measurements were installed at defined locations in the apartment. The relevant optical measurement locations for this scenario are provided in the FDS template and associated measurement-location files. All optical results refer to the reference wavelength 638 nm.
 
 ### 8.3 Smoke alarms
 
-Optical smoke alarms were installed at ceiling level in:
+Optical smoke alarms according to DIN EN 14604 were installed at ceiling level in:
 
 - F2
 - FC
