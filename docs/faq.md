@@ -32,3 +32,11 @@ During the evaluation, all submissions are compiled and compared in anonymised f
 **Q: Can other models, such as zone models or other CFD codes, be used?**
 
 No. Stage 1 is specifically an FDS intercomparison: the provided template, the prescribed `DEVC` outputs and the automated post-processing are tied to FDS, and comparability requires that all participants use FDS 6.11.0. Zone models or other CFD codes are therefore not part of this exercise. Whether a broader cross-code comparison is undertaken at a later stage remains open, but it is outside the scope of Stage 1.
+
+---
+
+## Q4 – Conditions for participation
+
+**Q: Are there any specific conditions (organisational, financial, etc.) for taking part?**
+
+No. Participation is voluntary and free of charge — there is no fee and no contract. The only requirements are to use FDS 6.11.0, to follow the submission format and to complete the questionnaire. Participation is open to anyone competent in fire modelling, whether in research or in engineering practice; registration is by email before the registration deadline. Each submission receives an anonymous participant ID, and all results are evaluated anonymously.

@@ -180,7 +180,8 @@ The choice of tenability criteria and threshold values is itself an object of th
     ├── Call_for_Participation_de.pdf
     ├── Call_for_Participation_en.pdf
     ├── submission_format.md
-    └── faq.md
+    ├── faq.md
+    └── privacy.md
 ```
 
 ---
@@ -318,6 +319,8 @@ Lukas Arnold
 
 hasenheide@bcl-leipzig.de
 ```
+
+Data protection information: [`docs/privacy.md`](docs/privacy.md).
 
 ---
 
