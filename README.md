@@ -196,7 +196,7 @@ Interested individuals, teams or organisations register by email:
 hasenheide@bcl-leipzig.de
 ```
 
-Multiple submissions from the same organisation or working group are possible. Each planned submission receives a separate anonymous participant ID, for example `K7M`, `3QA`, `BV5`.
+Each independent contribution (a team or modeller working separately) receives its own anonymous participant ID, e.g. `K7M`, `3QA`, `BV5`. One participant ID corresponds to one submission, which may contain several runs (a best estimate plus optional sensitivity variants); exactly one run is marked `best_estimate`. Multiple independent contributions from the same organisation are welcome.
 
 ### Step 2: Data package
 

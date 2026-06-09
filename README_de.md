@@ -196,7 +196,7 @@ Interessierte Personen, Gruppen oder Organisationen registrieren sich per E-Mail
 hasenheide@bcl-leipzig.de
 ```
 
-Aus einer Organisation oder Arbeitsgruppe können mehrere Einreichungen erfolgen. Jede geplante Einreichung erhält eine eigene anonyme Teilnehmer-ID, z. B. `K7M`, `3QA`, `BV5`.
+Jeder eigenständige Beitrag (ein Team oder eine Bearbeiterin/ein Bearbeiter, die unabhängig arbeiten) erhält eine eigene anonyme Teilnehmer-ID, z. B. `K7M`, `3QA`, `BV5`. Eine Teilnehmer-ID entspricht einer Einreichung, die mehrere Läufe enthalten kann (eine Best-Estimate-Prognose plus optionale Sensitivitätsläufe); genau ein Lauf wird als `best_estimate` gekennzeichnet. Mehrere eigenständige Beiträge aus derselben Organisation sind willkommen.
 
 ### Schritt 2: Datenpaket
 

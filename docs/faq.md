@@ -40,3 +40,11 @@ No. Stage 1 is specifically an FDS intercomparison: the provided template, the p
 **Q: Are there any specific conditions (organisational, financial, etc.) for taking part?**
 
 No. Participation is voluntary and free of charge — there is no fee and no contract. The only requirements are to use FDS 6.11.0, to follow the submission format and to complete the questionnaire. Participation is open to anyone competent in fire modelling, whether in research or in engineering practice; registration is by email before the registration deadline. Each submission receives an anonymous participant ID, and all results are evaluated anonymously.
+
+---
+
+## Q5 – Participant IDs, submissions and runs
+
+**Q: How do participant IDs, submissions and runs relate, and what if several people from one organisation take part?**
+
+One participant ID corresponds to one submission, and a submission may contain several **runs** — for example a best estimate plus sensitivity variants — of which exactly one is marked as the `best_estimate`. Separate participant IDs are issued for **independent contributions**, i.e. teams or modellers working separately. Multiple independent contributions from the same organisation are welcome, each receiving its own anonymous ID.
