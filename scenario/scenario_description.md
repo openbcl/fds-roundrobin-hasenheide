@@ -20,7 +20,7 @@ The test apartment consisted of three interconnected rooms and a corridor:
 The total net floor area of the connected spaces was approximately 50.67 m².  
 The clear room height ranged between 2.52 m and 2.54 m.
 
-All internal doors were removed. The doorway to the stairwell was sealed with a plastic-sheet door.
+All internal doors were removed. The doorway to the stairwell was sealed with a plastic-sheet door (a taped polyethylene sheet with a zippered access slit).
 
 Each room (F1, F2, F3) had one window. All windows remained closed during the pre-ventilation phase.
 
@@ -43,7 +43,7 @@ Duration: 20 minutes
 
 ## 4. Building construction
 
-- Walls: solid clay brick masonry — both exterior walls and interior partitions; no stud or drywall partitions (period construction); traditional lime/gypsum plaster finish on the masonry  
+- Walls: solid clay brick masonry — both exterior walls and interior partitions; no stud or drywall partitions (period construction); traditional lime/gypsum plaster finish on the masonry. Visible wall coverings are paint or wallpaper finishes, not separate structural layers  
 - Windows: double glazing; timber frames in F1 and F2, PVC frame in F3; closed throughout the pre-ventilation phase  
 - Floors/ceilings: timber beam construction  
 - Intermediate layers: slag fill  
@@ -140,7 +140,7 @@ Thermocouples were installed in F1, F2 and F3 at the following heights above flo
 
 An additional thermocouple was installed at ceiling level above the fire in F1.
 
-The thermocouples had a bead diameter of approximately 1 mm. The FDS template therefore uses `QUANTITY='THERMOCOUPLE'`, which models the radiation-affected bead response rather than the gas temperature; the FDS default bead diameter of 1 mm is consistent with the measurement.
+The thermocouples were Type-K with a bead diameter of approximately 1 mm, so the FDS default thermocouple properties are appropriate. The FDS template therefore uses `QUANTITY='THERMOCOUPLE'`, which models the radiation-affected bead response rather than the gas temperature; the FDS default bead diameter of 1 mm is consistent with the measurement.
 
 ### 8.2 Optical measurements
 
