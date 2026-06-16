@@ -159,6 +159,9 @@
 &DEVC ID='EXT_F3_2_4', QUANTITY='EXTINCTION COEFFICIENT', XYZ=2.275,12.925,2.4/
 &DEVC ID='EXT_F3_2_5', QUANTITY='EXTINCTION COEFFICIENT', XYZ=2.275,12.925,2.5/
 
+! Optical instrument locations (LEM / SICK). Point extinction at the path centre is used:
+! it was verified to be an essentially unbiased estimate of the path-mean extinction
+! reported by the transmissometers.
 &DEVC ID='EXT_DEVC_F1_2_3', QUANTITY='EXTINCTION COEFFICIENT', XYZ=3.150, 3.725,2.3/
 &DEVC ID='EXT_DEVC_F2_1_5', QUANTITY='EXTINCTION COEFFICIENT', XYZ=2.275, 6.275,1.5/
 &DEVC ID='EXT_DEVC_F2_1_9', QUANTITY='EXTINCTION COEFFICIENT', XYZ=2.275, 6.275,1.9/

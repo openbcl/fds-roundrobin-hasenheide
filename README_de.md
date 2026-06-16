@@ -65,6 +65,10 @@ Die Innentüren zwischen diesen Bereichen waren entfernt. Die Fenster blieben w�
 
 ![Blick vom Flur FC in Richtung F1/F2](geometry/photos/View_FC-F2.jpg)
 
+![Folientür, geschlossen](geometry/photos/Plastic_sheet_door_closed.jpg)
+
+![Folientür, geöffnet](geometry/photos/Plastic_sheet_door_open.jpg)
+
 **Einheitlich für alle Teilnehmenden bereitgestellt:**
 
 - Szenariobeschreibung — [`scenario/scenario_description.md`](scenario/scenario_description.md) (Ablauf, Brennstoffzusammensetzung, Umgebungsbedingungen, Instrumentierung, Messhöhen und -positionen).

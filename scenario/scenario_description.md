@@ -43,10 +43,11 @@ Duration: 20 minutes
 
 ## 4. Building construction
 
-- Walls: clay brick masonry  
+- Walls: solid clay brick masonry — both exterior walls and interior partitions; no stud or drywall partitions (period construction); traditional lime/gypsum plaster finish on the masonry  
+- Windows: double glazing; timber frames in F1 and F2, PVC frame in F3; closed throughout the pre-ventilation phase  
 - Floors/ceilings: timber beam construction  
 - Intermediate layers: slag fill  
-- Ceiling underside: timber + plaster  
+- Ceiling underside: timber with traditional lime/gypsum plaster on reed lath (not gypsum wallboard)  
 - Floor finish: timber + linoleum  
 
 Air leakage is expected but not quantified.
@@ -99,7 +100,7 @@ Hep_160_S1_R3
 
 Participants receive a single averaged and smoothed fuel mass curve derived from these replicates.
 
-The provided curve is the mean of the normalised mass-loss histories of the three replicates. The per-replicate raw data and the processing scripts will be released together with the experimental data after the submission freeze, ensuring full reproducibility of the prescribed input.
+The provided curve is the mean of the three replicates' individually processed mass-loss histories. Each replicate was smoothed with a 15 s centred moving average and then affinely normalised to start at the nominal initial mass (0.150 kg) and end at zero; the three normalised curves were then averaged. The underlying raw per-replicate data and the processing scripts will be released with the experimental data after the submission freeze (Stage 2). For Stage 1, the heat release rate or mass loss rate shall be derived from this single prescribed curve, so that the fire source is common to all submissions.
 
 The fuel mass history is prescribed as input data. Its implementation in FDS, for example as a prescribed heat release rate or as a mass loss rate, is part of the modelling choice and must be documented.
 
@@ -117,6 +118,8 @@ For the three replicates of `hep_160_150`, the following values were recorded:
 | Hep_160_S1_R2 | 12.71 | 70.70 | 993.12 |
 | Hep_160_S1_R3 | 12.30 | 79.81 | 992.15 |
 | **Mean** | **12.1** | **73.2** | **993.0** |
+
+**Test sequencing and initial surface temperatures.** Up to five tests were conducted per day. Because of the low heat release rate and only brief heating, and because each test was actively cross-ventilated afterwards (windows in F1 and F3 opened, mobile fan in F3) to flush the apartment with ambient air, no thermal build-up carried over between tests. Consecutive tests on the same day were spaced 46–137 min apart (median ≈ 90 min), with overnight breaks between test days. IR-thermometer wall and ceiling surface temperatures in F1, measured before each individual test, were within −3.3 to +2.1 °C (mean −0.3 °C) of that run's pre-test ambient air, with no systematic warming across repeats. Room surfaces can therefore be taken as essentially in equilibrium with the pre-test ambient air for every run.
 
 ## 8. Instrumentation
 

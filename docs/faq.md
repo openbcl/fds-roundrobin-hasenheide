@@ -48,3 +48,19 @@ No. Participation is voluntary and free of charge — there is no fee and no con
 **Q: How do participant IDs, submissions and runs relate, and what if several people from one organisation take part?**
 
 One participant ID corresponds to one submission, and a submission may contain several **runs** — for example a best estimate plus sensitivity variants — of which exactly one is marked as the `best_estimate`. Separate participant IDs are issued for **independent contributions**, i.e. teams or modellers working separately. Multiple independent contributions from the same organisation are welcome, each receiving its own anonymous ID.
+
+---
+
+## Q6 – Provision of the fuel mass-loss data
+
+**Q: Can the individual replicate mass-loss curves be provided, not just the averaged curve?**
+
+For Stage 1 a single averaged, smoothed and normalised mass-loss curve is prescribed, and the heat release rate or mass loss rate shall be derived from it. Prescribing one common fuel mass history is a deliberate scope decision: it removes fire-source/HRR-derivation variability (including the choice of smoothing method), so that Stage 1 isolates smoke transport, stratification, extinction, alarm actuation and tenability. The processing method is documented in `scenario/scenario_description.md` §6. The raw per-replicate data and the processing scripts will be released with the experimental data at Stage 2 (open calculation).
+
+---
+
+## Q7 – Point vs. path extinction
+
+**Q: Why does the template use point extinction rather than a path-integrated (`PATH OBSCURATION`) device?**
+
+The experimental transmissometers report a path-mean extinction (k = −ln τ / L). Integrating the FDS extinction field along the actual ~1 m optical paths and comparing it with the single-point value at the path centre shows the point value to be an essentially unbiased estimate of the path mean (median deviation −0.1 %, interquartile range [−0.9, +0.7] %, 95th percentile 5.7 % — within the experimental extinction uncertainty). Brief larger deviations occur only at lower heights in F2 when the descending smoke layer crosses the path, and are non-systematic. Point devices are therefore retained. (The field is integrated directly rather than via FDS `PATH OBSCURATION`, which currently truncates multi-mesh beams with descending endpoints — FDS issue #16338.)
