@@ -65,9 +65,9 @@ Internal doors between these areas were removed. Windows remained closed during 
 
 ![View from FC to F1/F2](geometry/photos/View_FC-F2.jpg)
 
-![Plastic-sheet door, closed](geometry/photos/Plastic_sheet_door_closed.jpg)
-
-![Plastic-sheet door, open](geometry/photos/Plastic_sheet_door_open.jpg)
+| Plastic-sheet door, closed | Plastic-sheet door, open |
+|---|---|
+| ![Plastic-sheet door, closed](geometry/photos/Plastic_sheet_door_closed.jpg) | ![Plastic-sheet door, open](geometry/photos/Plastic_sheet_door_open.jpg) |
 
 **Provided uniformly to all participants:**
 
