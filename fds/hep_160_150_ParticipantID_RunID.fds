@@ -92,8 +92,10 @@
 ! The pan geometry below approximates the 160 mm x 160 mm steel pan with coordinates
 ! snapped to multiples of 0.05 m, compatible with mesh cell sizes that are multiples
 ! or fractions of 5 cm. The resulting fuel surface (Fire_pan) is 150 mm x 150 mm = 0.0225 m^2.
-! When prescribing MLRPUA or HRRPUA from the fuel mass history, use the actual
-! fuel area of 0.0256 m^2 (= 160 mm x 160 mm), not the model geometry.
+! Compute MLRPUA or HRRPUA from the prescribed mass-loss curve and THIS model surface
+! area (0.0225 m^2), so that the total mass loss rate / HRR released equals the prescribed
+! curve. Using the physical pan area (0.0256 m^2 = 160 mm x 160 mm) with this surface would
+! under-release the total by ~12 %.
 &OBST ID='Load_cell',  XB=1.800,2.350,1.900,2.350,0.00,0.15/
 &OBST ID='Fire_pan',   XB=2.000,2.150,2.050,2.200,0.20,0.20/ ! fuel surface, 150 mm x 150 mm
 &OBST ID='Pan_wall_W', XB=2.000,2.000,2.050,2.200,0.20,0.30/

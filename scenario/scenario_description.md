@@ -78,7 +78,7 @@ Initial fuel mass: 150 g
 Fuel area:         0.0256 m²
 ```
 
-The fire pan is represented in the template as 150 mm × 150 mm so that all coordinates align with a 0.05 m grid; the physical pan is 160 mm × 160 mm (0.0256 m²). This approximation is deliberate and identical for every participant. For any area-specific quantity (MLRPUA, HRRPUA), the physical fuel area of **0.0256 m²** shall be used. Participants who instead use the geometric template area shall state this in the questionnaire.
+The fire pan is represented in the template as 150 mm × 150 mm (0.0225 m²) so that all coordinates align with a 0.05 m grid; the physical pan is 160 mm × 160 mm (0.0256 m²). This approximation is deliberate and identical for every participant. Because FDS releases (area-specific rate) × (model surface area), MLRPUA or HRRPUA must be computed from the prescribed mass-loss curve and the **model** fuel-surface area (**0.0225 m²**), so that the total mass loss rate and heat release rate released in the model equal the prescribed (measured) curve. Using the physical pan area (0.0256 m²) with the 150 mm × 150 mm model surface would under-release the total by about 12 %.
 
 Ignition was performed manually. Ignition defines:
 
