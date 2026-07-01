@@ -5,7 +5,7 @@
 **Szenario:** `hep_160_150`  
 **Berechnungsart:** Semi-Blind Prediction / semi-blinde Prognoserechnung  
 **Software:** Fire Dynamics Simulator (FDS) 6.11.0  
-**Status:** Vorbereitung / Call for Participation  
+**Status:** Registrierung geschlossen — Simulationsphase  
 **Träger:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)  
 **Lizenz:** CC BY 4.0 (siehe [LICENSE](LICENSE))
 
@@ -184,6 +184,7 @@ Die Wahl der Tauglichkeitskriterien und Grenzwerte ist selbst Gegenstand dieser 
     ├── Call_for_Participation_de.pdf
     ├── Call_for_Participation_en.pdf
     ├── submission_format.md
+    ├── questionnaire.md
     ├── faq.md
     └── privacy.md
 ```
@@ -212,7 +213,7 @@ Jede Gruppe führt mindestens eine Best-Estimate-Simulation des Szenarios `hep_1
 
 ### Schritt 4: Fragebogen
 
-Die Teilnehmenden füllen den strukturierten Fragebogen aus (siehe Abschnitt 9), der ab dem Kick-off in diesem Repository bereitsteht.
+Die Teilnehmenden füllen den strukturierten Fragebogen aus (siehe Abschnitt 9), verfügbar unter [`docs/questionnaire.md`](docs/questionnaire.md).
 
 ### Schritt 5: Abgabe
 
@@ -234,7 +235,7 @@ Nach dem Freeze werden die experimentellen Daten ausgewertet und den anonymisier
 
 ## 9. Fragebogen
 
-Ein strukturierter Fragebogen ist verpflichtender Bestandteil jeder Abgabe. Statt der Werte selbst (die direkt aus der Eingabedatei ablesbar sind) erfasst er die **Begründungen und Quellen** hinter den freien Modellierungsentscheidungen — Brennstoff- und Verbrennungsparameter, Mesh, Wandrandbedingungen, Leckage und Rauchwarnmeldermethode — zusammen mit der Bewertung der Personensicherheit für F1, F2, FC und F3 sowie einigen Angaben zum Teilnehmerkontext. Der Fragebogen steht ab dem Kick-off in diesem Repository bereit.
+Ein strukturierter Fragebogen ist verpflichtender Bestandteil jeder Abgabe. Statt der Werte selbst (die direkt aus der Eingabedatei ablesbar sind) erfasst er die **Begründungen und Quellen** hinter den freien Modellierungsentscheidungen — Brennstoff- und Verbrennungsparameter, Mesh, Wandrandbedingungen, Leckage und Rauchwarnmeldermethode — zusammen mit der Bewertung der Personensicherheit für F1, F2, FC und F3 sowie einigen Angaben zum Teilnehmerkontext. Der Fragebogen ist unter [`docs/questionnaire.md`](docs/questionnaire.md) verfügbar.
 
 ---
 
@@ -260,10 +261,10 @@ Sensitivitäten sollen nicht zur nachträglichen Auswahl der „besten“ Kurve 
 | Phase | Beschreibung | Termin / Frist | Status |
 |---|---|---|---|
 | Vorbereitung | Repository, Datenpaket und Templates | — | abgeschlossen |
-| Registrierung startet | Beginn der Anmeldung | ab 10.05.2026 | offen |
-| Registrierungsschluss | Letzter Tag für die Anmeldung | 30.06.2026 | offen |
-| Kick-off | Vorstellung von Szenario und Regeln | Einladung nach Registrierungsschluss | offen |
-| Simulationsphase | Bearbeitung durch Teilnehmende | nach Kick-off – 30.09.2026 | offen |
+| Registrierung startet | Beginn der Anmeldung | ab 10.05.2026 | abgeschlossen |
+| Registrierungsschluss | Letzter Tag für die Anmeldung | 30.06.2026 | geschlossen |
+| Kick-off | Vorstellung von Szenario und Regeln | nach Registrierungsschluss | abgeschlossen |
+| Simulationsphase | Bearbeitung durch Teilnehmende | bis 30.09.2026 | läuft |
 | Frist für Rückfragen | Letzter Tag für technische Rückfragen | 15.09.2026 | offen |
 | Abgabe-Freeze | Einfrieren aller Abgaben | 30.09.2026 | offen |
 | Auswertung Stufe 1 | Vergleich mit Messdaten | tba | offen |

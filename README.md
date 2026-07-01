@@ -5,7 +5,7 @@
 **Scenario:** `hep_160_150`  
 **Exercise type:** Semi-blind prediction  
 **Simulation code:** Fire Dynamics Simulator (FDS) 6.11.0  
-**Status:** Preparation / Call for Participation  
+**Status:** Registration closed — simulation phase  
 **Organiser:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)  
 **License:** CC BY 4.0 (see [LICENSE](LICENSE))
 
@@ -184,6 +184,7 @@ The choice of tenability criteria and threshold values is itself an object of th
     ├── Call_for_Participation_de.pdf
     ├── Call_for_Participation_en.pdf
     ├── submission_format.md
+    ├── questionnaire.md
     ├── faq.md
     └── privacy.md
 ```
@@ -212,7 +213,7 @@ Each group performs at least one best-estimate simulation of `hep_160_150` using
 
 ### Step 4: Questionnaire
 
-Participants complete the structured questionnaire (see Section 9), which is available in this repository from the kick-off.
+Participants complete the structured questionnaire (see Section 9), available at [`docs/questionnaire.md`](docs/questionnaire.md).
 
 ### Step 5: Submission
 
@@ -234,7 +235,7 @@ After the freeze, the experimental data are evaluated and compared with the anon
 
 ## 9. Questionnaire
 
-A structured questionnaire is a mandatory part of each submission. Rather than the values themselves (which are read directly from the input file), it records the **reasoning and sources** behind the open modelling choices — fuel and combustion parameters, mesh, wall boundary conditions, leakage and the smoke-alarm method — together with the tenability assessment for F1, F2, FC and F3 and some participant context. The questionnaire is provided in this repository from the kick-off.
+A structured questionnaire is a mandatory part of each submission. Rather than the values themselves (which are read directly from the input file), it records the **reasoning and sources** behind the open modelling choices — fuel and combustion parameters, mesh, wall boundary conditions, leakage and the smoke-alarm method — together with the tenability assessment for F1, F2, FC and F3 and some participant context. The questionnaire is available at [`docs/questionnaire.md`](docs/questionnaire.md).
 
 ---
 
@@ -260,10 +261,10 @@ Sensitivity analyses shall not be used to select the “best” curve after the 
 | Phase | Description | Date / Deadline | Status |
 |---|---|---|---|
 | Preparation | Repository, data package and templates | — | Completed |
-| Registration opens | Start of registration | from 2026-05-10 | Open |
-| Registration deadline | Last day for registration | 2026-06-30 | Open |
-| Kick-off | Introduction of scenario and rules | invitation after registration deadline | Open |
-| Simulation phase | Work by participants | after kick-off – 2026-09-30 | Open |
+| Registration opens | Start of registration | from 2026-05-10 | Completed |
+| Registration deadline | Last day for registration | 2026-06-30 | Closed |
+| Kick-off | Introduction of scenario and rules | after registration deadline | Completed |
+| Simulation phase | Work by participants | until 2026-09-30 | In progress |
 | Question deadline | Last day for technical questions | 2026-09-15 | Open |
 | Submission freeze | Freeze of all submissions | 2026-09-30 | Open |
 | Stage 1 evaluation | Comparison with measurement data | tba | Open |
