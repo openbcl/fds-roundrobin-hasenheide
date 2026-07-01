@@ -8,8 +8,8 @@ authors:
   - family-names: Arnold
     given-names: Lukas
   - name: Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)
-version: "v1.0-stage1"
-date-released: "2026-05-29"
+version: "v1.0"
+date-released: "2026-07-01"
 repository-code: "https://github.com/openbcl/fds-roundrobin-hasenheide"
 license: "CC BY 4.0"
 abstract: "Semi-blind FDS intercomparison benchmark for the Hasenheide residential compartment fire scenario hep_160_150."
