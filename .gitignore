@@ -9,3 +9,7 @@ docs/*.pdf
 participants/*
 # Internal working notes (local only)
 backlog.md
+# Participant submissions (local only, not for publication)
+results/
+# Evaluation pipeline (local only; scripts released at Stage 2)
+analysis/
