@@ -72,3 +72,19 @@ The experimental transmissometers report a path-mean extinction (k = −ln τ / 
 **Q: Should MLRPUA / HRRPUA be derived using the physical pan area (0.0256 m²) or the model surface area (0.0225 m²)?**
 
 The model surface area. FDS releases the total rate as (area-specific rate) × (model surface area), and the template fire surface is 150 mm × 150 mm = 0.0225 m². To reproduce the prescribed (measured) total mass loss rate and heat release rate, compute MLRPUA/HRRPUA from the prescribed mass-loss curve and this 0.0225 m² model area. Using the physical pan area (0.0256 m²) with the 0.0225 m² model surface would under-release the total by about 12 %.
+
+---
+
+## Q9 – Walls, mesh boundaries and re-meshing
+
+**Q: Not all walls are defined as `OBST`; some are represented by the mesh boundary. If I change the mesh, do the walls disappear?**
+
+The observation is correct, and the template is intentionally built this way. Internal partitions between rooms are explicit `OBST` obstructions with doorways cut as `HOLE`, and the east walls and (closed) windows are `OBST`. The remaining envelope — the west and south perimeter, the floor, the ceiling, and the re-entrant corners of the L-shaped footprint — is formed by the external boundaries of the per-room meshes, which FDS treats as solid, no-flux walls by default. As shipped, the enclosure is complete.
+
+The computational mesh is a participant choice. The single invariant to keep is that the **outer surface of your mesh system stays on the original wall planes** (the apartment footprint), so that the enclosed geometry — the four rooms, the three doorways, the closed windows and the footprint — is identical regardless of your mesh:
+
+- **Refining the resolution** (`IJK`) on the same extents preserves every wall automatically.
+- **Subdividing the meshes inside the footprint** is also safe: you may split a room into several meshes (for example for MPI) or embed refinement meshes; internal mesh-to-mesh interfaces are transparent and neither create nor remove walls, and `OBST` walls and door `HOLE`s are defined in absolute coordinates and survive any subdivision.
+- **Changing the outer extent or footprint** (merging into one larger or padded box, extending the domain, or re-tiling so an outer face leaves a wall plane) removes the walls that those boundaries represented. In that case restore the envelope explicitly — keep mesh faces on the original wall planes, or add `OBST` walls and/or assign a boundary surface via `&VENT MB=...` — and verify the enclosure and footprint in Smokeview.
+
+Note on wall properties: the template ships all surfaces as the FDS default (`INERT`); the wall construction and thermal boundary are yours to define. Internal partitions are `OBST` and take a `SURF_ID` directly, but the outer envelope is the domain boundary — to apply your chosen construction there you must assign it explicitly (`&VENT MB='XMIN' SURF_ID='...'`, etc.) or model those walls as `OBST`. Otherwise the perimeter remains default-inert even if your partition walls carry a construction.
