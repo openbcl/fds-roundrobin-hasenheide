@@ -13,3 +13,5 @@ backlog.md
 results/
 # Evaluation pipeline (local only; scripts released at Stage 2)
 analysis/
+# Kick-off presentation materials (local only, not for publication)
+kickoff/
