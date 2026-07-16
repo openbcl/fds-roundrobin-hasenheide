@@ -190,3 +190,14 @@ subsequent scientific publication, subject to the usual authorship criteria.
 - [ ] I prefer to decline co-authorship / remain anonymous.
 
 *(Name and affiliation for authorship are handled via the registration contact, so this questionnaire itself remains anonymous.)*
+
+---
+
+## Section 6 – Declaration on reference data
+
+This declaration supports the integrity of the semi-blind exercise. It is used only to interpret the results correctly (for example, to analyse affected submissions separately) and never to disadvantage a participant.
+
+**6.1** To the best of your knowledge, did you or any member of your group consult, before submitting your prediction, any publicly available measured or reference data or interim results from the Hasenheide experiments beyond the Stage-1 data package provided by the organisers?
+
+- [ ] No
+- [ ] Yes — please state the source and which quantities you saw: ___________
