@@ -88,3 +88,29 @@ The computational mesh is a participant choice. The single invariant to keep is 
 - **Changing the outer extent or footprint** (merging into one larger or padded box, extending the domain, or re-tiling so an outer face leaves a wall plane) removes the walls that those boundaries represented. In that case restore the envelope explicitly — keep mesh faces on the original wall planes, or add `OBST` walls and/or assign a boundary surface via `&VENT MB=...` — and verify the enclosure and footprint in Smokeview.
 
 Note on wall properties: the template ships all surfaces as the FDS default (`INERT`); the wall construction and thermal boundary are yours to define. Internal partitions are `OBST` and take a `SURF_ID` directly, but the outer envelope is the domain boundary — to apply your chosen construction there you must assign it explicitly (`&VENT MB='XMIN' SURF_ID='...'`, etc.) or model those walls as `OBST`. Otherwise the perimeter remains default-inert even if your partition walls carry a construction.
+
+---
+
+## Q10 – Which walls are exterior, and is the building heated?
+
+**Q: Which of the walls are exterior walls, and what temperature conditions apply between inside and outside?**
+
+The test apartment *Fluppe* (F1, F2, F3, corridor FC) is one of three flats on this storey; the floor plan (`geometry/Floor_plan_overview.pdf`) shows the neighbouring apartments and the stairwell. Only the façade walls carrying the windows — the east/outer walls of F1, F2 and F3 — are **exterior** walls facing outdoor air. Every other wall of the apartment is **internal to the building**: the walls adjoining the neighbouring (equally vacant, unheated) apartments and the stairwell, and the partitions between the rooms within the apartment.
+
+The building was **unheated** during the campaign, so inside and outside were in thermal equilibrium (**isothermal**); §7 records that room surfaces can be taken as essentially at the pre-test ambient temperature (~12 °C). For the pre-ventilation phase every wall therefore backs onto a space at about ambient temperature, with no heating-driven stack effect. The exterior-vs-interior distinction matters mainly for leakage paths (Q12) — leakage leaves the apartment both to the outdoors and into the adjoining building spaces — not for the initial thermal boundary.
+
+---
+
+## Q11 – What are the wall thicknesses?
+
+**Q: Where do I find the wall thicknesses?**
+
+They are dimensioned on the floor plan in the data package (`geometry/Floor_plan_overview.pdf` and the DXF drawings `geometry/*.dxf`). The wall `OBST` thicknesses in the FDS template are grid-snapped approximations of these dimensions (aligned to the 0.05 m reference grid). If you model heat conduction into the walls, note that the **thermal** thickness is a property of your wall surface/material definition and can be set to the architectural value independently of the `OBST` geometric thickness.
+
+---
+
+## Q12 – Building fabric and air leakage
+
+**Q: Can you say more about the building fabric, to help estimate the air leakage?**
+
+The construction is described in §4: solid clay-brick masonry (exterior walls and interior partitions alike; period construction, no stud/drywall), lime/gypsum plaster on the masonry, timber-beam floors and ceilings with slag-fill infill, plaster-on-reed ceiling soffit, linoleum over painted floorboards; double glazing (timber frames in F1/F2, PVC in F3), closed throughout. Two conditions bear on leakage: the building had been vacant for a prolonged period with no recent maintenance, and it is period solid-masonry construction. Envelope air leakage is therefore expected to be non-negligible but is **not quantified** in Stage 1 — its magnitude and representation (a pressure-zone leakage area, distributed leakage, or geometric openings) remain a modelling choice to justify in your questionnaire. Note that "leakage out of the apartment" includes paths both to the outdoors and into the adjoining building spaces.
