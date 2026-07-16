@@ -13,9 +13,9 @@ Only information documented in this repository or in an official release is bind
 
 ## Q1 – FDS version
 
-**Q: Can I use the latest nightly build (test version) of FDS 6.11.0?**
+**Q: Which FDS version should I use — and may I use a nightly (test) build?**
 
-No. Only the official release version of FDS 6.11.0 shall be used. This ensures comparability of results across all submissions.
+Use an official release — **FDS 6.11.0 or 6.11.1** — not a nightly or test build, so that results stay comparable. Version 6.11.1 is a bug-fix patch of 6.11.0 with no intended change to the physics; we **recommend 6.11.1**, because it corrects a wall-boundary interaction present in 6.11.0 (see Q13), and it is the version to use if your model is affected by that interaction. Please record the exact version you used in your questionnaire.
 
 ---
 
@@ -114,3 +114,13 @@ They are dimensioned on the floor plan in the data package (`geometry/Floor_plan
 **Q: Can you say more about the building fabric, to help estimate the air leakage?**
 
 The construction is described in §4: solid clay-brick masonry (exterior walls and interior partitions alike; period construction, no stud/drywall), lime/gypsum plaster on the masonry, timber-beam floors and ceilings with slag-fill infill, plaster-on-reed ceiling soffit, linoleum over painted floorboards; double glazing (timber frames in F1/F2, PVC in F3), closed throughout. Two conditions bear on leakage: the building had been vacant for a prolonged period with no recent maintenance, and it is period solid-masonry construction. Envelope air leakage is therefore expected to be non-negligible but is **not quantified** in Stage 1 — its magnitude and representation (a pressure-zone leakage area, distributed leakage, or geometric openings) remain a modelling choice to justify in your questionnaire. Note that "leakage out of the apartment" includes paths both to the outdoors and into the adjoining building spaces.
+
+---
+
+## Q13 – Wall boundary condition with pressure-zone leakage (FDS 6.11.0)
+
+**Q: Is there anything to watch for when combining leakage with a wall boundary condition?**
+
+Yes. On FDS **6.11.0**, using the pressure-zone leakage model (`&ZONE` with `LEAK_AREA`) together with a **fixed-temperature wall surface** boundary condition silently disables that fixed-temperature boundary condition — the affected walls then do not behave as specified, and no warning is issued. This interaction was identified during the preparation of this study and is **fixed in FDS 6.11.1**.
+
+If your model combines pressure-zone leakage with fixed-temperature (prescribed-temperature) wall surfaces, use **6.11.1** (permitted under Q1). Models that do not combine these two features are unaffected on either release. In all cases, state the exact FDS version in your questionnaire.
