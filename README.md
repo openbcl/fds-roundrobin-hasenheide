@@ -4,7 +4,7 @@
 
 **Scenario:** `hep_160_150`  
 **Exercise type:** Semi-blind prediction  
-**Simulation code:** Fire Dynamics Simulator (FDS) 6.11.0  
+**Simulation code:** Fire Dynamics Simulator (FDS) 6.11.0 or 6.11.1  
 **Status:** Registration closed — simulation phase  
 **Organiser:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)  
 **License:** CC BY 4.0 (see [LICENSE](LICENSE))
@@ -48,7 +48,7 @@ Stage 1 uses the experimental setup `hep_160_150` — a series of three replicat
 | Replicate tests | 3 |
 | Evaluation period | Pre-ventilation period |
 | Quantities of interest | Gas temperature, optical extinction (638 nm), smoke alarm actuation (DIN EN 14604), tenability |
-| FDS version | FDS 6.11.0 |
+| FDS version | FDS 6.11.0 or 6.11.1 |
 
 The apartment layout consists of three interconnected rooms and a corridor:
 
@@ -97,7 +97,7 @@ The choice of surrogate fuel and combustion parameters is itself treated as part
 | Wall boundary conditions | Inert, thermally active or simplified layered constructions |
 | Leakage / infiltration | None, estimated or parameterised |
 | Initial conditions | Where not explicitly specified in the data package |
-| Numerical settings | As long as they are plausible for FDS 6.11.0 and documented |
+| Numerical settings | As long as they are plausible for FDS 6.11.0 or 6.11.1 and documented |
 | Tenability assessment | Criteria for impaired egress and incapacitation |
 | Sensitivity analyses | Optional, in addition to the main prediction |
 
@@ -209,7 +209,7 @@ Participants use the current released version of this repository. Only official 
 
 ### Step 3: Simulation
 
-Each group performs at least one best-estimate simulation of `hep_160_150` using FDS 6.11.0. Optional sensitivity cases may be submitted in addition to the best-estimate prediction.
+Each group performs at least one best-estimate simulation of `hep_160_150` using FDS 6.11.0 or 6.11.1. Optional sensitivity cases may be submitted in addition to the best-estimate prediction.
 
 ### Step 4: Questionnaire
 
@@ -334,7 +334,7 @@ Data protection information: [`docs/privacy.md`](docs/privacy.md).
 Before submission, please check:
 
 - [ ] Best-estimate case is clearly identified.
-- [ ] FDS 6.11.0 was used.
+- [ ] FDS 6.11.0 or 6.11.1 was used.
 - [ ] FDS input file `*.fds` is included.
 - [ ] FDS output file `*.out` is included.
 - [ ] CSV result files `*.csv` are included.

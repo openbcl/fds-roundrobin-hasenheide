@@ -4,7 +4,7 @@
 
 **Szenario:** `hep_160_150`  
 **Berechnungsart:** Semi-Blind Prediction / semi-blinde Prognoserechnung  
-**Software:** Fire Dynamics Simulator (FDS) 6.11.0  
+**Software:** Fire Dynamics Simulator (FDS) 6.11.0 oder 6.11.1  
 **Status:** Registrierung geschlossen — Simulationsphase  
 **Träger:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)  
 **Lizenz:** CC BY 4.0 (siehe [LICENSE](LICENSE))
@@ -48,7 +48,7 @@ Stufe 1 verwendet das Versuchssetup `hep_160_150` — eine Serie von drei Wieder
 | Wiederholungen | 3 |
 | Auswertungsphase | Phase ohne Belüftung |
 | Zielgrößen | Temperatur, Lichtextinktion (638 nm), Rauchwarnmelderaktivierung (DIN EN 14604), Personensicherheit |
-| FDS-Version | FDS 6.11.0 |
+| FDS-Version | FDS 6.11.0 oder 6.11.1 |
 
 Das Wohnungsmodell besteht aus drei verbundenen Räumen und einem Flur:
 
@@ -97,7 +97,7 @@ Die Wahl des Surrogatbrennstoffs und der Verbrennungsparameter ist selbst Teil d
 | Wandmodell | inert, thermisch aktiv oder vereinfachte Schichten |
 | Leckagen | keine, geschätzt oder parametrisiert |
 | Anfangsbedingungen | sofern nicht ausdrücklich im Datenpaket vorgegeben |
-| Numerische Einstellungen | soweit mit FDS 6.11.0 plausibel und dokumentiert |
+| Numerische Einstellungen | soweit mit FDS 6.11.0 oder 6.11.1 plausibel und dokumentiert |
 | Personensicherheit | Kriterien für Fluchtbehinderung und Handlungsunfähigkeit |
 | Sensitivitäten | optional, zusätzlich zur Hauptprognose |
 
@@ -209,7 +209,7 @@ Die Teilnehmenden verwenden die aktuelle freigegebene Version dieses Repositorie
 
 ### Schritt 3: Simulation
 
-Jede Gruppe führt mindestens eine Best-Estimate-Simulation des Szenarios `hep_160_150` mit FDS 6.11.0 durch. Optionale Sensitivitätsläufe können zusätzlich eingereicht werden.
+Jede Gruppe führt mindestens eine Best-Estimate-Simulation des Szenarios `hep_160_150` mit FDS 6.11.0 oder 6.11.1 durch. Optionale Sensitivitätsläufe können zusätzlich eingereicht werden.
 
 ### Schritt 4: Fragebogen
 
@@ -334,7 +334,7 @@ Datenschutzinformationen: [`docs/privacy.md`](docs/privacy.md).
 Vor der Abgabe bitte prüfen:
 
 - [ ] Best-Estimate-Lauf ist eindeutig gekennzeichnet.
-- [ ] FDS 6.11.0 wurde verwendet.
+- [ ] FDS 6.11.0 oder 6.11.1 wurde verwendet.
 - [ ] FDS-Eingabedatei `*.fds` ist enthalten.
 - [ ] FDS-Outputdatei `*.out` ist enthalten.
 - [ ] CSV-Ergebnisdateien `*.csv` sind enthalten.

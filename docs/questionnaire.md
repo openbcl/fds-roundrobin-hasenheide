@@ -37,6 +37,10 @@ ___________
 
 ___________
 
+**1.6** FDS version used for this submission (official release — 6.11.0 or 6.11.1; see FAQ Q1 and Q13):
+
+___________
+
 ---
 
 ## Section 2 – Justifications for Key Modelling Choices
