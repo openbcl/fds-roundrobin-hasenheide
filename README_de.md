@@ -185,6 +185,7 @@ Die Wahl der Tauglichkeitskriterien und Grenzwerte ist selbst Gegenstand dieser 
     ├── Call_for_Participation_en.pdf
     ├── submission_format.md
     ├── questionnaire.md
+    ├── questionnaire_fillable.docx
     ├── faq.md
     └── privacy.md
 ```
@@ -217,7 +218,7 @@ Die Teilnehmenden füllen den strukturierten Fragebogen aus (siehe Abschnitt 9),
 
 ### Schritt 5: Abgabe
 
-Die Abgabe ist gemäß [`docs/submission_format.md`](docs/submission_format.md) zu packen und zu benennen: ein komprimiertes Archiv mit der/den FDS-Eingabedatei(en), etwaigen referenzierten Zusatzdateien, der FDS-Outputdatei (`.out`) und den CSV-Ergebnisdateien, wobei die Hauptprognose eindeutig als `best_estimate` gekennzeichnet ist.
+Die Abgabe ist gemäß [`docs/submission_format.md`](docs/submission_format.md) zu packen und zu benennen: ein komprimiertes Archiv mit der/den FDS-Eingabedatei(en), etwaigen referenzierten Zusatzdateien, der FDS-Outputdatei (`.out`), den CSV-Ergebnisdateien und dem ausgefüllten Fragebogen, wobei die Hauptprognose eindeutig als `best_estimate` gekennzeichnet ist.
 
 ### Schritt 6: Formale Abgabeprüfung
 
@@ -235,7 +236,7 @@ Nach dem Freeze werden die experimentellen Daten ausgewertet und den anonymisier
 
 ## 9. Fragebogen
 
-Ein strukturierter Fragebogen ist verpflichtender Bestandteil jeder Abgabe. Statt der Werte selbst (die direkt aus der Eingabedatei ablesbar sind) erfasst er die **Begründungen und Quellen** hinter den freien Modellierungsentscheidungen — Brennstoff- und Verbrennungsparameter, Mesh, Wandrandbedingungen, Leckage und Rauchwarnmeldermethode — zusammen mit der Bewertung der Personensicherheit für F1, F2, FC und F3 sowie einigen Angaben zum Teilnehmerkontext. Der Fragebogen ist unter [`docs/questionnaire.md`](docs/questionnaire.md) verfügbar.
+Ein strukturierter Fragebogen ist verpflichtender Bestandteil jeder Abgabe. Statt der Werte selbst (die direkt aus der Eingabedatei ablesbar sind) erfasst er die **Begründungen und Quellen** hinter den freien Modellierungsentscheidungen — Brennstoff- und Verbrennungsparameter, Mesh, Wandrandbedingungen, Leckage und Rauchwarnmeldermethode — zusammen mit der Bewertung der Personensicherheit für F1, F2, FC und F3 sowie einigen Angaben zum Teilnehmerkontext. Der Fragebogen ist als Markdown ([`docs/questionnaire.md`](docs/questionnaire.md)) und als ausfüllbares Word-Formular ([`docs/questionnaire_fillable.docx`](docs/questionnaire_fillable.docx)) verfügbar; beide Formate sind zulässig und werden ausgefüllt dem Abgabe-Archiv beigelegt.
 
 ---
 
@@ -343,7 +344,7 @@ Vor der Abgabe bitte prüfen:
 - [ ] Zusätzliche Größen, Sensorpositionen oder abgeleitete Kenngrößen für die Bewertung der Personensicherheit sind dokumentiert.
 - [ ] Es wurden keine experimentellen Zielmessdaten verwendet.
 - [ ] Das Archiv folgt der Namenskonvention.
-- [ ] Der Fragebogen ist ausgefüllt.
+- [ ] Der ausgefüllte Fragebogen liegt im Archiv.
 - [ ] Das Archiv wurde an `hasenheide@bcl-leipzig.de` gesendet.
 
 ---

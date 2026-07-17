@@ -185,6 +185,7 @@ The choice of tenability criteria and threshold values is itself an object of th
     ├── Call_for_Participation_en.pdf
     ├── submission_format.md
     ├── questionnaire.md
+    ├── questionnaire_fillable.docx
     ├── faq.md
     └── privacy.md
 ```
@@ -217,7 +218,7 @@ Participants complete the structured questionnaire (see Section 9), available at
 
 ### Step 5: Submission
 
-Package and name the submission as described in [`docs/submission_format.md`](docs/submission_format.md): a compressed archive containing the FDS input file(s), any referenced additional files, the FDS output file (`.out`) and the CSV result files, with the main prediction clearly identified as `best_estimate`.
+Package and name the submission as described in [`docs/submission_format.md`](docs/submission_format.md): a compressed archive containing the FDS input file(s), any referenced additional files, the FDS output file (`.out`), the CSV result files and the completed questionnaire, with the main prediction clearly identified as `best_estimate`.
 
 ### Step 6: Formal submission check
 
@@ -235,7 +236,7 @@ After the freeze, the experimental data are evaluated and compared with the anon
 
 ## 9. Questionnaire
 
-A structured questionnaire is a mandatory part of each submission. Rather than the values themselves (which are read directly from the input file), it records the **reasoning and sources** behind the open modelling choices — fuel and combustion parameters, mesh, wall boundary conditions, leakage and the smoke-alarm method — together with the tenability assessment for F1, F2, FC and F3 and some participant context. The questionnaire is available at [`docs/questionnaire.md`](docs/questionnaire.md).
+A structured questionnaire is a mandatory part of each submission. Rather than the values themselves (which are read directly from the input file), it records the **reasoning and sources** behind the open modelling choices — fuel and combustion parameters, mesh, wall boundary conditions, leakage and the smoke-alarm method — together with the tenability assessment for F1, F2, FC and F3 and some participant context. The questionnaire is available as Markdown ([`docs/questionnaire.md`](docs/questionnaire.md)) and as a fillable Word form ([`docs/questionnaire_fillable.docx`](docs/questionnaire_fillable.docx)); either format may be completed and is included, filled, in the submission archive.
 
 ---
 
@@ -343,7 +344,7 @@ Before submission, please check:
 - [ ] Additional quantities, sensor locations or derived indicators used for the tenability assessment are documented.
 - [ ] No experimental target data were used.
 - [ ] Archive follows the naming convention.
-- [ ] Questionnaire is completed.
+- [ ] Completed questionnaire is included in the archive.
 - [ ] Archive is sent to `hasenheide@bcl-leipzig.de`.
 
 ---

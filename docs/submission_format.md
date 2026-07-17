@@ -23,7 +23,8 @@ VIB_Hasenheide_Stage1_K7M.zip
 ```
 
 The archive shall contain the FDS input file, any additional files referenced by the FDS
-input, the FDS output file and the CSV result files.
+input, the FDS output file, the CSV result files, and the completed questionnaire (either the
+fillable `questionnaire_fillable.docx` or the Markdown `questionnaire.md` — both are accepted).
 
 For a single case:
 
@@ -32,6 +33,7 @@ submission/
 ├── *.fds
 ├── *.out
 ├── *.csv
+├── questionnaire_fillable.docx   (completed; or questionnaire.md)
 └── [optional] additional_files/
 ```
 
@@ -45,7 +47,8 @@ submission/
 └── sensitivity_03/
 ```
 
-The main prediction must be clearly identified as `best_estimate`.
+The main prediction must be clearly identified as `best_estimate`. The questionnaire is
+completed for each submitted run, so every run folder contains its own completed questionnaire.
 
 ---
 

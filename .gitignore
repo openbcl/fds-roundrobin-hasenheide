@@ -1,5 +1,7 @@
 # Office source files – only distribute final PDFs
 *.docx
+# …except the fillable questionnaire, which is part of the data package
+!docs/questionnaire_fillable.docx
 *.xlsx
 *.pptx
 # Literature PDFs in docs/ – exclude CfP files
