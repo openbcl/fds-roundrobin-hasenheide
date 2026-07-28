@@ -126,3 +126,13 @@ Yes. On FDS **6.11.0**, using the pressure-zone leakage model (`&ZONE` with `LEA
 Note that this includes the **default `INERT` surface**: `INERT` is itself a fixed-temperature boundary, held at the ambient temperature (`TMPA`). A model that uses pressure-zone leakage and simply leaves its walls at the default — without an explicitly defined conducting or adiabatic surface — is therefore also affected; the walls silently stop imposing the ambient temperature. This is easy to overlook precisely because no wall temperature was ever set by hand.
 
 If your model combines pressure-zone leakage with a fixed-temperature wall surface — **including default `INERT` walls** — use **6.11.1** (permitted under Q1). Walls that solve heat conduction (material-based, thermally thick) or are explicitly adiabatic do not use a fixed-temperature boundary and are not affected by this interaction. In all cases, state the exact FDS version in your questionnaire.
+
+---
+
+## Q14 – The floor plan shows a room that is not in the FDS template
+
+**Q: The plan shows an additional room that is not preset in the FDS file. Should I add rooms to match it?**
+
+No — do not change the number of rooms. The prescribed template geometry — the three interconnected rooms F1, F2, F3 and the corridor FC — is exactly the connected, sealed pre-ventilation volume evaluated in Stage 1, and it is the common baseline for all submissions. The additional room shown on the plan belongs to the apartment but was **partitioned off and not part of the test setup**; it was not included in the connected, investigated volume and is therefore deliberately absent from the template. The separation to that space is represented as a closed boundary in the template (see Q9 on how mesh/model boundaries act as walls).
+
+You may refine the geometry (mesh, wall build-up) where technically justified, but the enclosed set of rooms, doorways and closed windows must stay identical; changing the room count would alter the scenario and break the comparability of the semi-blind exercise.
