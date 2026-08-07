@@ -136,3 +136,13 @@ If your model combines pressure-zone leakage with a fixed-temperature wall surfa
 No — do not change the number of rooms. The prescribed template geometry — the three interconnected rooms F1, F2, F3 and the corridor FC — is exactly the connected, sealed pre-ventilation volume evaluated in Stage 1, and it is the common baseline for all submissions. The additional room shown on the plan belongs to the apartment but was **partitioned off and not part of the test setup**; it was not included in the connected, investigated volume and is therefore deliberately absent from the template. The separation to that space is represented as a closed boundary in the template (see Q9 on how mesh/model boundaries act as walls).
 
 You may refine the geometry (mesh, wall build-up) where technically justified, but the enclosed set of rooms, doorways and closed windows must stay identical; changing the room count would alter the scenario and break the comparability of the semi-blind exercise.
+
+---
+
+## Q15 – DEVC output split into several files (`DEVC_COLUMN_LIMIT`)
+
+**Q: I use many additional devices and set `DEVC_COLUMN_LIMIT` in `&DUMP`, which splits the DEVC output into several numbered CSV files (`..._1_devc.csv`, `..._2_devc.csv`, …). What do I submit for the required `_devc.csv` file?**
+
+This is fine. Setting `DEVC_COLUMN_LIMIT` is acceptable: it only changes how the DEVC output is split across files — it does not change the output intervals, the ambient conditions, or the `DEVC` definitions, so the common `&DUMP` / `&MISC` behaviour is effectively unchanged. Keep the template `DEVC` IDs unmodified, as required.
+
+The automated post-processing reads `hep_160_150_<ParticipantID>_<RunID>_devc.csv` and matches columns by their `DEVC` IDs (the template column names). So make the file that contains the template's preset devices available under exactly that name: **copy** the numbered file that holds them (e.g. `..._5_devc.csv`) to `..._devc.csv`, and **include all the numbered CSV files** in your archive as well. Extra columns are ignored; only ensure that the full set of required template `DEVC` columns sits together in that one file (none split across two files).
