@@ -5,7 +5,7 @@
 **Szenario:** `hep_160_150`  
 **Berechnungsart:** Semi-Blind Prediction / semi-blinde Prognoserechnung  
 **Software:** Fire Dynamics Simulator (FDS) 6.11.0 oder 6.11.1  
-**Status:** Registrierung geschlossen — Simulationsphase  
+**Status:** Abgabe geschlossen — Auswertung läuft  
 **Träger:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)  
 **Lizenz:** CC BY 4.0 (siehe [LICENSE](LICENSE))
 
@@ -265,10 +265,10 @@ Sensitivitäten sollen nicht zur nachträglichen Auswahl der „besten“ Kurve 
 | Registrierung startet | Beginn der Anmeldung | ab 10.05.2026 | abgeschlossen |
 | Registrierungsschluss | Letzter Tag für die Anmeldung | 30.06.2026 | geschlossen |
 | Kick-off | Vorstellung von Szenario und Regeln | nach Registrierungsschluss | abgeschlossen |
-| Simulationsphase | Bearbeitung durch Teilnehmende | bis 30.09.2026 | läuft |
-| Frist für Rückfragen | Letzter Tag für technische Rückfragen | 15.09.2026 | offen |
-| Abgabe-Freeze | Einfrieren aller Abgaben | 30.09.2026 | offen |
-| Auswertung Stufe 1 | Vergleich mit Messdaten | tba | offen |
+| Simulationsphase | Bearbeitung durch Teilnehmende | bis 30.09.2026 | abgeschlossen |
+| Frist für Rückfragen | Letzter Tag für technische Rückfragen | 15.09.2026 | geschlossen |
+| Abgabe-Freeze | Einfrieren aller Abgaben | 30.09.2026 | abgeschlossen |
+| Auswertung Stufe 1 | Vergleich mit Messdaten | tba | läuft |
 | Workshop | Diskussion der anonymisierten Ergebnisse | tba | offen |
 | Open Calculation | spätere Stufe mit offengelegten Messdaten | tba | geplant |
 

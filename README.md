@@ -5,7 +5,7 @@
 **Scenario:** `hep_160_150`  
 **Exercise type:** Semi-blind prediction  
 **Simulation code:** Fire Dynamics Simulator (FDS) 6.11.0 or 6.11.1  
-**Status:** Registration closed — simulation phase  
+**Status:** Submissions closed — evaluation in progress  
 **Organiser:** Verein zur Förderung von Ingenieurmethoden im Brandschutz e. V. (VIB)  
 **License:** CC BY 4.0 (see [LICENSE](LICENSE))
 
@@ -265,10 +265,10 @@ Sensitivity analyses shall not be used to select the “best” curve after the 
 | Registration opens | Start of registration | from 2026-05-10 | Completed |
 | Registration deadline | Last day for registration | 2026-06-30 | Closed |
 | Kick-off | Introduction of scenario and rules | after registration deadline | Completed |
-| Simulation phase | Work by participants | until 2026-09-30 | In progress |
-| Question deadline | Last day for technical questions | 2026-09-15 | Open |
-| Submission freeze | Freeze of all submissions | 2026-09-30 | Open |
-| Stage 1 evaluation | Comparison with measurement data | tba | Open |
+| Simulation phase | Work by participants | until 2026-09-30 | Completed |
+| Question deadline | Last day for technical questions | 2026-09-15 | Closed |
+| Submission freeze | Freeze of all submissions | 2026-09-30 | Completed |
+| Stage 1 evaluation | Comparison with measurement data | tba | In progress |
 | Workshop | Discussion of anonymised results | tba | Open |
 | Open calculation | Later stage with disclosed measurement data | tba | Planned |
 
