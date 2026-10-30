@@ -31,7 +31,7 @@ During the evaluation, all submissions are compiled and compared in anonymised f
 
 **Q: Can other models, such as zone models or other CFD codes, be used?**
 
-No. Stage 1 is specifically an FDS intercomparison: the provided template, the prescribed `DEVC` outputs and the automated post-processing are tied to FDS, and comparability requires that all participants use FDS 6.11.0. Zone models or other CFD codes are therefore not part of this exercise. Whether a broader cross-code comparison is undertaken at a later stage remains open, but it is outside the scope of Stage 1.
+No. Stage 1 is specifically an FDS intercomparison: the provided template, the prescribed `DEVC` outputs and the automated post-processing are tied to FDS, and comparability requires that all participants use FDS 6.11.0 or 6.11.1. Zone models or other CFD codes are therefore not part of this exercise. Whether a broader cross-code comparison is undertaken at a later stage remains open, but it is outside the scope of Stage 1.
 
 ---
 
@@ -55,7 +55,7 @@ One participant ID corresponds to one submission, and a submission may contain s
 
 **Q: Can the individual replicate mass-loss curves be provided, not just the averaged curve?**
 
-For Stage 1 a single averaged, smoothed and normalised mass-loss curve is prescribed, and the heat release rate or mass loss rate shall be derived from it. Prescribing one common fuel mass history is a deliberate scope decision: it removes fire-source/HRR-derivation variability (including the choice of smoothing method), so that Stage 1 isolates smoke transport, stratification, extinction, alarm actuation and tenability. The processing method is documented in `scenario/scenario_description.md` §6. The raw per-replicate data and the processing scripts will be released with the experimental data at Stage 2 (open calculation).
+For Stage 1 a single averaged, smoothed and normalised mass-loss curve is prescribed, and the heat release rate or mass loss rate shall be derived from it. Prescribing one common fuel mass history is a deliberate scope decision: it removes fire-source/HRR-derivation variability (including the choice of smoothing method), so that Stage 1 isolates smoke transport, stratification, extinction, alarm actuation and tenability. The processing method is documented in `scenario/scenario_description.md` §6. The raw per-replicate data and the processing scripts will be released with the experimental data; the release will be announced in this repository.
 
 ---
 

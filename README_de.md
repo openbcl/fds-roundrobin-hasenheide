@@ -25,11 +25,11 @@ Stufe 1 ist als **Semi-Blind Prediction** angelegt:
 - **spezifiziert**, weil Szenario, Geometrie, Randbedingungen, FDS-Version, FDS-Template, Sensorpositionen und Massenverlustdaten bereitgestellt werden;
 - **offen in den Modellierungsentscheidungen**, weil Teilnehmende zentrale Annahmen wie Gitterauflösung, Brandquellenumsetzung, Rußausbeute, Strahlungsanteil, Leckageannahmen und Wandmodellierung selbst festlegen und begründen.
 
-Eine spätere **Open Calculation** ist geplant. In dieser Stufe werden die experimentellen Daten offengelegt. Danach können Modelle überarbeitet, Sensitivitäten durchgeführt und Abweichungen gezielt analysiert werden.
+Weitere Schritte nach Stufe 1 sind noch nicht festgelegt. Sie werden in diesem Repository angekündigt, ebenso die Veröffentlichung der Rohdaten je Versuch und der Auswerteskripte.
 
 Durch die Vorgabe der Massenverlustkurve nimmt die Studie die Brandwachstumsprognose bewusst aus dem Untersuchungsumfang heraus und konzentriert sich auf Rauchtransport, thermische Schichtung, Lichtextinktion, Rauchwarnmelderaktivierung und Personensicherheit. Dies ist eine bewusste Entscheidung, um diese Größen von der bekannt großen Unsicherheit der Brandwachstumsmodellierung zu trennen.
 
-Die Ergebnisse charakterisieren die Prognosestreuung für dieses spezifische Szenario und diese Teilnehmerstichprobe. Sie sind nicht als allgemeines Maß für die Zuverlässigkeit von FDS zu verstehen; breitere Schlüsse erfordern die für spätere Stufen geplanten weiteren Szenarien und Teilnehmenden.
+Die Ergebnisse charakterisieren die Prognosestreuung für dieses spezifische Szenario und diese Teilnehmerstichprobe. Sie sind nicht als allgemeines Maß für die Zuverlässigkeit von FDS zu verstehen; breitere Schlüsse erfordern weitere Szenarien und Teilnehmende.
 
 ---
 
@@ -270,7 +270,7 @@ Sensitivitäten sollen nicht zur nachträglichen Auswahl der „besten“ Kurve 
 | Abgabe-Freeze | Einfrieren aller Abgaben | 30.09.2026 | abgeschlossen |
 | Auswertung Stufe 1 | Vergleich mit Messdaten | tba | läuft |
 | Workshop | Diskussion der anonymisierten Ergebnisse | tba | offen |
-| Open Calculation | spätere Stufe mit offengelegten Messdaten | tba | geplant |
+| Weitere Schritte | Veröffentlichung der Messdaten je Versuch; weitere Schritte werden angekündigt | tba | offen |
 
 ---
 

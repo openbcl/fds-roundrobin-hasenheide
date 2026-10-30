@@ -25,11 +25,11 @@ Stage 1 is conducted as a **semi-blind prediction exercise**:
 - **specified**, because the scenario description, geometry, boundary conditions, FDS version, FDS template, measurement locations and fuel mass history are provided;
 - **open with respect to modelling assumptions**, because participants define and justify key modelling choices such as mesh resolution, fire source specification, soot yield, radiative fraction, leakage assumptions and wall boundary conditions.
 
-A later **open calculation** stage is planned. In that stage, experimental data will be disclosed and participants may revise their models, perform sensitivity analyses and investigate the causes of deviations.
+Further steps after Stage 1 have not been fixed yet. They will be announced in this repository, as will the release of the raw per-replicate data and the processing scripts.
 
 By prescribing the fuel mass history, the exercise deliberately removes fire-growth prediction from its scope and focuses on smoke transport, thermal stratification, optical extinction, smoke alarm actuation and tenability. This is a conscious design choice to isolate these quantities from the well-known large uncertainty of fire-growth modelling.
 
-The findings characterise the prediction variability for this specific scenario and participant sample. They are not intended as a general measure of FDS reliability; broader conclusions require the additional scenarios and participants planned for later stages.
+The findings characterise the prediction variability for this specific scenario and participant sample. They are not intended as a general measure of FDS reliability; broader conclusions require additional scenarios and participants.
 
 ---
 
@@ -270,7 +270,7 @@ Sensitivity analyses shall not be used to select the “best” curve after the 
 | Submission freeze | Freeze of all submissions | 2026-09-30 | Completed |
 | Stage 1 evaluation | Comparison with measurement data | tba | In progress |
 | Workshop | Discussion of anonymised results | tba | Open |
-| Open calculation | Later stage with disclosed measurement data | tba | Planned |
+| Further steps | Release of the per-replicate data; further steps to be announced | tba | Open |
 
 ---
 
